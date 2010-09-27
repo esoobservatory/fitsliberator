@@ -3,3 +3,19 @@ documentation/build
 liberator/binaries/FITS Liberator.app
 liberator/binaries/FITSLiberator3.dmg
 liberator/project/mac/build
+glob:*.obj
+glob:*.idb
+glob:*.pdb
+glob:*.ncb
+glob:*dep
+glob:liberator/intermediate/Release/FitsLiberator.res
+glob:liberator/intermediate/Release/FitsLiberator.exe.intermediate.manifest
+glob:cfitsio/intermediate/Release/BuildLog.htm
+glob:liberator/binaries/FL_30_Win.exe
+glob:liberator/intermediate/BuildLog.htm
+glob:liberator/intermediate/Release/BuildLog.htm
+glob:liberator/project/windows/FitsLiberator.suo
+glob:libtiff/project/Release/BuildLog.htm
+glob:*.lib
+glob:pds_toolbox/intermediate/Release/BuildLog.htm
+glob:tinyxml/intermediate/Release/BuildLog.htm
