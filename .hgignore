@@ -1,0 +1,5 @@
+.DS_Store
+documentation/build
+liberator/binaries/FITS Liberator.app
+liberator/binaries/FITSLiberator3.dmg
+liberator/project/mac/build

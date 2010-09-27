@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Metadata">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element maxOccurs="unbounded" name="Schema">
+          <xs:complexType>
+            <xs:attribute name="Prefix" type="xs:string" use="required"/>
+            <xs:attribute name="Namespace" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Category">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Keyword">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element maxOccurs="unbounded" name="Completion" type="xs:string" />
+                  </xs:sequence>
+                  <xs:attribute name="Name" type="xs:string" use="required" />
+                  <xs:attribute name="Schema" type="xs:string" use="required"/>
+                  <xs:attribute name="Path" type="xs:string" use="optional"/>
+                  <xs:attribute name="Id" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="Type" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="Flags" type="xs:unsignedInt" use="optional" />
+                  <xs:attribute name="Elements" type="xs:unsignedByte" use="optional" />
+                  <xs:attribute name="Description" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required" />
+            <xs:attribute name="Description" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Ruleset">
+          <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+              <xs:element name="Vector">
+                <xs:complexType>
+                  <xs:attribute name="Header" type="xs:string" use="required" />
+                  <xs:attribute name="Keyword" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Map">
+                <xs:complexType>
+                  <xs:attribute name="Header" type="xs:string" use="required" />
+                  <xs:attribute name="Keyword" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Transform">
+                <xs:complexType>
+                  <xs:attribute name="Header" type="xs:string" use="required" />
+                  <xs:attribute name="Keyword" type="xs:string" use="required" />
+                  <xs:attribute name="Match" type="xs:string" use="required" />
+                  <xs:attribute name="Format" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Set">
+                <xs:complexType>
+                  <xs:attribute name="Value" type="xs:string" use="required" />
+                  <xs:attribute name="Keyword" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:choice>
+            <xs:attribute name="Format" type="xs:string" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Version" type="xs:decimal" use="required" />
+      <xs:attribute name="Schema" type="xs:string" use="required" />
+      <xs:attribute name="Namespace" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
