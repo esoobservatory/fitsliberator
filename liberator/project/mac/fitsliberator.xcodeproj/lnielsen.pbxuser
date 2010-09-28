@@ -3,7 +3,7 @@
 	089C1669FE841209C02AAC07 /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = 7515D44A1243441900937482 /* FITS Liberator */;
-		activeTarget = 757D1C8F124A3116009C3C21 /* FITSLiberator3.dmg */;
+		activeTarget = 8D01CCC60486CAD60068D4B7 /* FitsLiberator */;
 		addToTargets = (
 			8D01CCC60486CAD60068D4B7 /* FitsLiberator */,
 		);
@@ -340,6 +340,13 @@
 			75E9B1C312514029003CD87A /* PBXTextBookmark */ = 75E9B1C312514029003CD87A /* PBXTextBookmark */;
 			75E9B1C412514030003CD87A /* PBXTextBookmark */ = 75E9B1C412514030003CD87A /* PBXTextBookmark */;
 			75E9B1C51251C385003CD87A /* PBXTextBookmark */ = 75E9B1C51251C385003CD87A /* PBXTextBookmark */;
+			75E9B1F012523AB0003CD87A /* PBXTextBookmark */ = 75E9B1F012523AB0003CD87A /* PBXTextBookmark */;
+			75E9B1F112523AB0003CD87A /* PBXTextBookmark */ = 75E9B1F112523AB0003CD87A /* PBXTextBookmark */;
+			75E9B1F212523AB0003CD87A /* PBXTextBookmark */ = 75E9B1F212523AB0003CD87A /* PBXTextBookmark */;
+			75E9B1F312523AB0003CD87A /* PBXBookmark */ = 75E9B1F312523AB0003CD87A /* PBXBookmark */;
+			75E9B1F412523AB0003CD87A /* PBXTextBookmark */ = 75E9B1F412523AB0003CD87A /* PBXTextBookmark */;
+			75E9B1F712523E55003CD87A /* PBXTextBookmark */ = 75E9B1F712523E55003CD87A /* PBXTextBookmark */;
+			75E9B1F812523E63003CD87A /* PBXTextBookmark */ = 75E9B1F812523E63003CD87A /* PBXTextBookmark */;
 			75EF5A55124A40EB005D4283 = 75EF5A55124A40EB005D4283 /* PBXBookmark */;
 			75EF5B58124A6623005D4283 = 75EF5B58124A6623005D4283 /* PBXTextBookmark */;
 			75EF5B59124A6623005D4283 = 75EF5B59124A6623005D4283 /* PBXTextBookmark */;
@@ -641,9 +648,9 @@
 	};
 	46E4F64C0E82B134003A32A2 /* MacPreferencesView.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1447, 3913}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1447, 4654}}";
 			sepNavSelRange = "{5887, 0}";
-			sepNavVisRange = "{5427, 3208}";
+			sepNavVisRange = "{5392, 1986}";
 		};
 	};
 	46ED0BFD0DEEE15A00BEA8B8 /* FitsStatisticsTools.cpp */ = {
@@ -1648,9 +1655,9 @@
 	};
 	75838FAC123F5D4C0036DE03 /* NavDialog.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1030, 2470}}";
-			sepNavSelRange = "{3, 9}";
-			sepNavVisRange = "{0, 870}";
+			sepNavIntBoundsRect = "{{0, 0}, {1447, 2795}}";
+			sepNavSelRange = "{4925, 0}";
+			sepNavVisRange = "{3830, 1886}";
 		};
 	};
 	758393911240B8EF0036DE03 /* FitsMacUI.h */ = {
@@ -1662,9 +1669,9 @@
 	};
 	758393941240BE320036DE03 /* FitsMacUI.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1447, 2379}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1447, 2522}}";
 			sepNavSelRange = "{1435, 577}";
-			sepNavVisRange = "{1221, 2347}";
+			sepNavVisRange = "{1186, 1838}";
 		};
 	};
 	7587B77D1239199A0069B8E1 /* Source Control */ = {
@@ -3099,6 +3106,70 @@
 		rType = 0;
 		vrLen = 750;
 		vrLoc = 2032;
+	};
+	75E9B1F012523AB0003CD87A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7534A4A70CA9523400FD9782 /* FitsEngine.cpp */;
+		name = "FitsEngine.cpp: 41";
+		rLen = 0;
+		rLoc = 2194;
+		rType = 0;
+		vrLen = 1870;
+		vrLoc = 5765;
+	};
+	75E9B1F112523AB0003CD87A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 46E4F64C0E82B134003A32A2 /* MacPreferencesView.cpp */;
+		name = "MacPreferencesView.cpp: 164";
+		rLen = 0;
+		rLoc = 5887;
+		rType = 0;
+		vrLen = 1986;
+		vrLoc = 5392;
+	};
+	75E9B1F212523AB0003CD87A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 758393941240BE320036DE03 /* FitsMacUI.cpp */;
+		name = "FitsMacUI.cpp: 25";
+		rLen = 577;
+		rLoc = 1435;
+		rType = 0;
+		vrLen = 1838;
+		vrLoc = 1186;
+	};
+	75E9B1F312523AB0003CD87A /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+	};
+	75E9B1F412523AB0003CD87A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 135";
+		rLen = 0;
+		rLoc = 5187;
+		rType = 0;
+		vrLen = 1886;
+		vrLoc = 3830;
+	};
+	75E9B1F712523E55003CD87A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7534A4A70CA9523400FD9782 /* FitsEngine.cpp */;
+		name = "FitsEngine.cpp: 61";
+		rLen = 0;
+		rLoc = 2572;
+		rType = 0;
+		vrLen = 750;
+		vrLoc = 2032;
+	};
+	75E9B1F812523E63003CD87A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 131";
+		rLen = 0;
+		rLoc = 4925;
+		rType = 0;
+		vrLen = 1886;
+		vrLoc = 3830;
 	};
 	75EF5A55124A40EB005D4283 /* PBXBookmark */ = {
 		isa = PBXBookmark;

@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -284,13 +282,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>120</integer>
-									<integer>118</integer>
-									<integer>80</integer>
+									<integer>79</integer>
+									<integer>78</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1074}, {389, 1000}}</string>
+							<string>{{0, 983}, {389, 1000}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -320,12 +318,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>FitsEngine.cpp</string>
+								<string>NavDialog.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -333,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>FitsEngine.cpp</string>
+										<string>NavDialog.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>75E9B1C412514030003CD87A</string>
+										<string>75E9B1F812523E63003CD87A</string>
 										<key>history</key>
 										<array>
 											<string>75EF5B58124A6623005D4283</string>
@@ -411,7 +411,10 @@
 											<string>75E9B18412513579003CD87A</string>
 											<string>75E9B18512513579003CD87A</string>
 											<string>75E9B19212513B54003CD87A</string>
-											<string>75E9B19312513B54003CD87A</string>
+											<string>75E9B1F012523AB0003CD87A</string>
+											<string>75E9B1F112523AB0003CD87A</string>
+											<string>75E9B1F212523AB0003CD87A</string>
+											<string>75E9B1F312523AB0003CD87A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -614,6 +617,7 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>7587B77B123919990069B8E1</string>
+		<string>/Users/lnielsen/Workspaces/fitsliberator/liberator/project/mac/fitsliberator.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 119 1919 1059 0 0 1920 1178 </string>
@@ -646,7 +650,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1181, 486}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-1779 162 1181 969 -1920 0 1920 1200 </string>
+								<string>-1759 131 1181 969 -1920 0 1920 1200 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -672,7 +676,7 @@
 								<key>Frame</key>
 								<string>{{0, 491}, {1181, 437}}</string>
 								<key>RubberWindowFrame</key>
-								<string>-1779 162 1181 969 -1920 0 1920 1200 </string>
+								<string>-1759 131 1181 969 -1920 0 1920 1200 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -704,11 +708,11 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>-1779 162 1181 969 -1920 0 1920 1200 </string>
+			<string>-1759 131 1181 969 -1920 0 1920 1200 </string>
 			<key>WindowToolGUID</key>
 			<string>7587B77B123919990069B8E1</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
