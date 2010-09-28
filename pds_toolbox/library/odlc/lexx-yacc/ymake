@@ -1,0 +1,8 @@
+yacc -d odl2.y
+lex -n odl2.l
+
+mv y.tab.c parser.c
+mv lex.yy.c lexan.c
+
+echo "modify y.tab.h into odlparse.h"
+

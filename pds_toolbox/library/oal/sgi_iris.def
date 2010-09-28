@@ -1,0 +1,7 @@
+CC	  = cc
+FLAGS     = -DSGI
+LIB	  = oal.a -lsun -lm
+RANLIB    = echo ranlib
+IDL_FLAGS = -KPIC
+IDL_LIBS  = -lsun -lm
+IDL_LD    = -shared

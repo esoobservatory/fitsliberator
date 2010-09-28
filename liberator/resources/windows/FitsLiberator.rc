@@ -1,0 +1,749 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "Resources.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BRUSH_TRANSPARENT   BITMAP                  "..\\..\\resources\\windows\\Brush-Transparent.bmp"
+IDB_TOOL_NORMAL         BITMAP                  "..\\..\\resources\\windows\\Toolbar-Normal-Flat.bmp"
+IDB_TOOL_HOT            BITMAP                  "..\\..\\resources\\windows\\Toolbar-Hot-Flat.bmp"
+IDB_CHECKBOX_CHECKED    BITMAP                  "Checkbox-Checked.bmp"
+IDB_CHECKBOX_UNCHECKED  BITMAP                  "Checkbox-Unchecked.bmp"
+IDB_CHECKBOX_EMPTY      BITMAP                  "..\\..\\resources\\windows\\Checkbox-Empty.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_FITSLIBERATOR       ICON                    "..\\..\\resources\\windows\\FitsLiberator.ico"
+IDI_HISTOGRAM_SLIDER_BLACK ICON                    "..\\..\\resources\\windows\\Slider-Black.ico"
+IDI_HISTOGRAM_SLIDER_DISABLED ICON                    "..\\..\\resources\\windows\\Slider-Disabled.ico"
+IDI_HISTOGRAM_SLIDER_WHITE ICON                    "..\\..\\resources\\windows\\Slider-White.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_TOOL_HOT            PNG                     "..\\..\\resources\\windows\\Toolbar-Hot.png"
+IDB_TOOL_NORMAL         PNG                     "..\\..\\resources\\windows\\Toolbar-Normal.png"
+IDB_USEBLACKLEVEL       PNG                     "..\\..\\resources\\UseBlackLevel.png"
+IDB_USEWHITELEVEL       PNG                     "..\\..\\resources\\UseWhiteLevel.png"
+IDB_ABOUT               PNG                     "..\\..\\resources\\About.png"
+IDB_PREVIEW_LOGO        PNG                     "..\\..\\resources\\fits_liberator_colour.png"
+IDB_THROBBER            PNG                     "..\\..\\resources\\throbber.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDM_STRETCH_MENU MENU 
+BEGIN
+    POPUP "Stretch"
+    BEGIN
+        MENUITEM "Linear",                      IDC_STRETCH_LINEAR
+        MENUITEM SEPARATOR
+        MENUITEM "ArcSinH(x)",                  IDC_STRETCH_ARCSINH
+        MENUITEM "Log(x)",                      IDC_STRETCH_LOG
+        MENUITEM SEPARATOR
+        MENUITEM "x^(1/2)",                     IDC_STRETCH_SQRT
+        MENUITEM "x^(1/3)",                     IDC_STRETCH_CUBEROOT
+        MENUITEM "x^(1/4)",                     IDC_STRETCH_FOURTHROOT
+        MENUITEM "x^(1/5)",                     IDC_STRETCH_FIFTHROOT
+        MENUITEM SEPARATOR
+        MENUITEM "x^1.5",                       IDC_STRETCH_POW15
+        MENUITEM "x^2",                         IDC_STRETCH_POW2
+        MENUITEM "x^3",                         IDC_STRETCH_POW3
+        MENUITEM "x^4",                         IDC_STRETCH_POW4
+        MENUITEM "x^5",                         IDC_STRETCH_POW5
+        MENUITEM "exp(x)",                      IDC_STRETCH_EXP
+        MENUITEM SEPARATOR
+        MENUITEM "ArcSinH(ArcSinH(x))",         IDC_STRETCH_ARCSINH_ARCSINH
+        MENUITEM "ArcSinH(x^(1/2))",            IDC_STRETCH_ARCSINH_SQRT
+        MENUITEM "Log(Log(x))",                 IDC_STRETCH_LOG_LOG
+        MENUITEM "Log(x^(1/2))",                IDC_STRETCH_LOG_SQRT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_ZOOMIN       CURSOR                  "..\\..\\resources\\windows\\cursorZoomIn.cur"
+IDC_CURSOR_ZOOMOUT      CURSOR                  "..\\..\\resources\\windows\\cursorZoomOut.cur"
+IDC_CURSOR_ZOOMLIMIT    CURSOR                  "..\\..\\resources\\windows\\cursorZoomLimit.cur"
+IDC_CURSOR_HAND         CURSOR                  "..\\..\\resources\\windows\\cursorHand.cur"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDM_PREVIEW_MENU MENU 
+BEGIN
+    POPUP "Preview"
+    BEGIN
+        MENUITEM "&Fit in Preview\tF",          IDC_PREVIEW_FIT
+        MENUITEM "&Actual Pixels\tA",           IDC_PREVIEW_ACTUAL
+        MENUITEM SEPARATOR
+        MENUITEM "Zoom &In\t+",                 IDC_PREVIEW_ZOOMIN
+        MENUITEM "Zoom &Out\t-",                IDC_PREVIEW_ZOOMOUT
+        MENUITEM SEPARATOR
+        MENUITEM "&Center in Preview\tC",       IDC_PREVIEW_CENTER
+    END
+END
+
+IDM_HISTOGRAM_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Show All",                    IDC_HISTOGRAM_SHOWALL
+        MENUITEM SEPARATOR
+        MENUITEM "Zoom In",                     IDC_HISTOGRAM_ZOOMIN
+        MENUITEM "Zoom Out",                    IDC_HISTOGRAM_ZOOMOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONS DIALOGEX 0, 0, 284, 251
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Initial guess",IDC_STATIC,6,6,215,66
+    CONTROL         "Method",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,14,20,76,8
+    COMBOBOX        IDC_OPTIONS_GUESS,90,18,124,14,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Black Level",IDC_STATIC,12,38,76,8
+    EDITTEXT        IDC_OPTIONS_BLACKLEVEL,90,36,124,12,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "White Level",IDC_STATIC,12,55,76,8
+    EDITTEXT        IDC_OPTIONS_WHITELEVEL,90,53,124,12,ES_RIGHT | ES_AUTOHSCROLL
+    GROUPBOX        "Stretch",IDC_STATIC,6,78,215,66
+    LTEXT           "Stretch function",IDC_STATIC,12,92,76,8
+    PUSHBUTTON      " Linear",IDC_OPTIONS_STRETCH,90,89,124,14,BS_LEFT
+    LTEXT           "Scaled peak level",IDC_STATIC,12,110,76,8
+    EDITTEXT        IDC_OPTIONS_SCALEDPEAK,90,108,124,12,ES_RIGHT | ES_AUTOHSCROLL
+    CONTROL         "Clear history",IDC_OPTIONS_CLEARHISTORY,"Button",BS_COMMANDLINK | WS_TABSTOP,7,218,214,26
+    DEFPUSHBUTTON   "OK",IDOK,227,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,227,23,50,14
+    PUSHBUTTON      "Defaults",IDC_OPTIONS_DEFAULTS,227,43,50,14
+    GROUPBOX        "Histogram markers",IDC_STATIC,6,155,215,60
+    CHECKBOX        "Peak",IDC_OPTIONS_SHOWPEAK,24,197,66,15
+    CHECKBOX        "Background",IDC_OPTIONS_SHOWBACKGROUND,24,182,66,15
+    CHECKBOX        "Zero",IDC_OPTIONS_SHOWZERO,24,167,66,15
+    PUSHBUTTON      "Clear history",IDC_OPTIONS_CLEARHISTORY_XP,227,66,50,14,NOT WS_VISIBLE
+    LTEXT           "Margin",IDC_OPTIONS_MARGIN,0,199,8,33,NOT WS_VISIBLE
+    CHECKBOX        "Mean",IDC_OPTIONS_SHOWMEAN,210,204,69,10,NOT WS_VISIBLE
+    CHECKBOX        "Mean",IDC_OPTIONS_SHOWSTRETCHEDMEAN,100,167,114,15
+    CHECKBOX        "Scaled Mean",IDC_OPTIONS_SHOWSCALEDMEAN,210,210,69,10,NOT WS_VISIBLE
+    CHECKBOX        "Median",IDC_OPTIONS_SHOWMEDIAN,210,216,73,10,NOT WS_VISIBLE
+    CHECKBOX        "Median",IDC_OPTIONS_SHOWSTRETCHEDMEDIAN,100,182,114,15
+    CHECKBOX        "Scaled Median",IDC_OPTIONS_SHOWSCALEDMEDIAN,210,222,73,10,NOT WS_VISIBLE
+    LTEXT           "",IDC_MARKER_RED,14,170,8,8,SS_CENTERIMAGE,WS_EX_RIGHT
+    LTEXT           "",IDC_MARKER_GREEN,14,185,8,8,SS_CENTERIMAGE,WS_EX_RIGHT
+    LTEXT           "",IDC_MARKER_MAGENTA,14,200,8,8,SS_CENTERIMAGE,WS_EX_RIGHT
+    LTEXT           "",IDC_MARKER_BLUE,90,170,8,8,SS_CENTERIMAGE,WS_EX_RIGHT
+    LTEXT           "",IDC_MARKER_PURPLE,90,185,8,8,SS_CENTERIMAGE,WS_EX_RIGHT
+    CHECKBOX        "Apply stretch directly",IDC_OPTIONS_APPLYSTRETCHDIRECTLY,14,126,114,15
+END
+
+IDD_PREVIEW DIALOGEX 0, 0, 522, 358
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Processing"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Image data",IDC_STATIC,354,8,160,77,0,WS_EX_TRANSPARENT
+    COMBOBOX        IDC_PLANE_SELECTOR,360,19,150,331,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP,WS_EX_TRANSPARENT
+    LTEXT           "X",IDC_STATIC,360,36,8,8,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_PICKER_X,365,36,31,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Y",IDC_STATIC,360,49,8,8,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_PICKER_Y,365,49,31,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Input",IDC_STATIC,441,36,20,8,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_PICKER_REAL,477,36,34,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Stretched",IDC_PICKER_MODE,441,49,32,8,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_PICKER_STRETCHED,478,49,34,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "",IDC_STATIC,360,65,150,1,0,WS_EX_STATICEDGE
+    LTEXT           "Width",IDC_STATIC,360,69,30,8,0,WS_EX_TRANSPARENT
+    LTEXT           "9999",IDC_PLANE_WIDTH,396,69,36,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Height",IDC_STATIC,438,69,30,8,0,WS_EX_TRANSPARENT
+    LTEXT           "9999",IDC_PLANE_HEIGHT,474,69,36,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    GROUPBOX        "Image statistics",IDC_STATIC,354,90,160,96,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STATIC,360,114,150,1,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_STATIC,396,102,1,78,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_STATIC,456,102,1,78,0,WS_EX_STATICEDGE
+    LTEXT           "Input",IDC_STATIC,402,102,48,8,0,WS_EX_TRANSPARENT
+    LTEXT           "Stretched",IDC_STATISTICS_MODE,462,102,48,8,0,WS_EX_TRANSPARENT
+    LTEXT           "Min",IDC_STATIC,360,121,30,9,0,WS_EX_TRANSPARENT
+    LTEXT           "9999999",IDC_STATISTICS_MIN_REAL,402,121,48,9,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "9999999",IDC_STATISTICS_MIN_STRETCHED,462,121,48,9,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Max",IDC_STATIC,360,132,30,8,0,WS_EX_TRANSPARENT
+    LTEXT           "9999999",IDC_STATISTICS_MAX_REAL,402,132,48,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "9999999",IDC_STATISTICS_MAX_STRETCHED,462,132,48,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Mean",IDC_STATIC,360,145,30,8,0,WS_EX_TRANSPARENT
+    LTEXT           "9999999",IDC_STATISTICS_MEAN_REAL,402,145,48,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "9999999",IDC_STATISTICS_MEAN_STRETCHED,462,145,48,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "Median",IDC_STATIC,360,156,30,8,0,WS_EX_TRANSPARENT
+    LTEXT           "9999999",IDC_STATISTICS_MEDIAN_REAL,402,156,48,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "9999999",IDC_STATISTICS_MEDIAN_STRETCHED,462,156,48,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "StdDev",IDC_STATIC,360,169,30,8,0,WS_EX_TRANSPARENT
+    LTEXT           "9999999",IDC_STATISTICS_STDDEV_REAL,402,169,48,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    LTEXT           "9999999",IDC_STATISTICS_STDDEV_STRETCHED,462,169,48,8,0,WS_EX_TRANSPARENT | WS_EX_RIGHT
+    GROUPBOX        "Scaling and stretch (Advanced)",IDC_STATIC,354,192,160,102,0,WS_EX_TRANSPARENT
+    LTEXT           "Stretch function",IDC_STATIC,360,206,55,8,0,WS_EX_TRANSPARENT
+    PUSHBUTTON      " Linear",IDC_STRETCH_FUNCTION,420,204,90,12,BS_LEFT
+    LTEXT           "Background level",IDC_STATIC,360,225,55,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STRETCH_BACKGROUND,420,222,73,14,ES_AUTOHSCROLL,WS_EX_TRANSPARENT
+    PUSHBUTTON      "",IDC_STRETCH_AUTOBACKGROUND,497,222,14,14
+    LTEXT           "Peak level",IDC_STATIC,360,243,55,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STRETCH_MAXRANGE,420,240,73,14,ES_AUTOHSCROLL,WS_EX_TRANSPARENT
+    PUSHBUTTON      "",IDC_STRETCH_AUTOPEAK,497,240,14,14
+    LTEXT           "Scaled peak level",IDC_STATIC,360,260,55,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STRETCH_RESCALE,420,258,73,14,ES_AUTOHSCROLL,WS_EX_TRANSPARENT
+    PUSHBUTTON      "Auto scaling",IDC_STRETCH_AUTOSCALE,356,276,77,14
+    PUSHBUTTON      "-",IDC_PREVIEW_ZOOMOUT,120,235,12,12
+    PUSHBUTTON      "+",IDC_PREVIEW_ZOOMIN,240,235,12,12
+    PUSHBUTTON      " 100%",IDC_PREVIEW_ZOOMLIST,137,235,99,12,BS_LEFT
+    LTEXT           "Black level",IDC_STATIC,127,338,34,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_HISTOGRAM_BLACK,36,336,74,14,ES_AUTOHSCROLL,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_HISTOGRAM_BLACKSPIN,"msctls_updown32",UDS_WRAP | UDS_ARROWKEYS,110,336,11,14,WS_EX_TRANSPARENT
+    RTEXT           "White level",IDC_STATIC,222,338,36,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_HISTOGRAM_WHITE,261,336,74,14,ES_AUTOHSCROLL,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_HISTOGRAM_WHITESPIN,"msctls_updown32",UDS_WRAP | UDS_ARROWKEYS,336,336,11,14,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_HISTOGRAM_MIN,36,242,72,10,0,WS_EX_TRANSPARENT
+    RTEXT           "",IDC_HISTOGRAM_MAX,264,242,84,10,0,WS_EX_TRANSPARENT
+    GROUPBOX        "Channels",IDC_STATIC,354,300,78,52,0,WS_EX_TRANSPARENT
+    RADIOBUTTON     "8-bit",IDC_PLANE_CHANNEL_8,360,312,66,10,WS_GROUP | WS_TABSTOP,WS_EX_TRANSPARENT
+    RADIOBUTTON     "16-bit",IDC_PLANE_CHANNEL_16,360,324,66,10,0,WS_EX_TRANSPARENT
+    RADIOBUTTON     "32-bit",IDC_PLANE_CHANNEL_32,360,336,66,10,0,WS_EX_TRANSPARENT
+    GROUPBOX        "Undefined",IDC_STATIC,438,300,76,52,0,WS_EX_TRANSPARENT
+    RADIOBUTTON     "Black",IDC_PLANE_UNDEFINED_BLACK,444,312,66,10,WS_GROUP | WS_TABSTOP,WS_EX_TRANSPARENT
+    RADIOBUTTON     "Transparent",IDC_PLANE_UNDEFINED_TRANSPARENT,444,324,66,10,0,WS_EX_TRANSPARENT
+    LTEXT           "RA",IDC_STATIC,402,36,17,10,0,WS_EX_TRANSPARENT
+    LTEXT           "DEC",IDC_STATIC,402,49,17,10,0,WS_EX_TRANSPARENT
+    RTEXT           "",IDC_PICKER_RA,421,36,15,10,0,WS_EX_TRANSPARENT
+    RTEXT           "",IDC_PICKER_DEC,421,49,15,10,0,WS_EX_TRANSPARENT
+    ICON            "",IDC_WARNING_NETWORK,5,336,20,20,SS_REALSIZEIMAGE,WS_EX_TRANSPARENT
+    PUSHBUTTON      "Apply values",IDC_STRETCH_APPLYSTRETCH,434,276,77,14,WS_DISABLED
+END
+
+IDD_REPOSITORY DIALOGEX 0, 0, 522, 358
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Metadata"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Dummy",IDC_DUMMY,8,336,50,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_REPOSITORY,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,8,8,505,342,WS_EX_TRANSPARENT
+END
+
+IDD_HEADER DIALOGEX 0, 0, 522, 358
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Image Headers"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_HEADER,8,8,506,342,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+    PUSHBUTTON      "Dummy",IDC_DUMMY,8,336,50,14,NOT WS_VISIBLE
+END
+
+IDD_MAIN DIALOGEX 0, 0, 611, 385
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_STATIC,540,117,67,1,0,WS_EX_STATICEDGE
+    CHECKBOX        "Preview",IDC_GLOBAL_PREVIEW,540,120,67,12,BS_VCENTER | BS_MULTILINE,WS_EX_TRANSPARENT
+    CHECKBOX        "Flip Image",IDC_PLANE_FLIP,540,132,67,12,BS_VCENTER | BS_MULTILINE,WS_EX_TRANSPARENT
+    CHECKBOX        "Freeze settings",IDC_GLOBAL_FREEZE,540,144,67,12,BS_VCENTER,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STATIC,540,158,67,1,0,WS_EX_STATICEDGE
+    LTEXT           "Mark in preview",IDC_STATIC,540,163,67,11,0,WS_EX_TRANSPARENT
+    CHECKBOX        "Undefined (red)",IDC_GLOBAL_UNDEFINED,540,171,67,18,BS_MULTILINE
+    CHECKBOX        "White clipping (green)",IDC_GLOBAL_WHITE,540,187,67,18,BS_MULTILINE,WS_EX_TRANSPARENT
+    CHECKBOX        "Black clipping (blue)",IDC_GLOBAL_BLACK,540,205,67,18,BS_MULTILINE,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STATIC,540,224,67,1,0,WS_EX_STATICEDGE
+    LTEXT           "Show image information for:",IDC_STATIC,540,227,67,18,0,WS_EX_TRANSPARENT
+    RADIOBUTTON     "Scaled",IDC_GLOBAL_SCALED,540,245,67,10,0,WS_EX_TRANSPARENT
+    RADIOBUTTON     "Stretched",IDC_GLOBAL_STRETCHED,540,256,67,10,0,WS_EX_TRANSPARENT
+    PUSHBUTTON      "Reset",IDC_STRETCH_RESET,540,98,67,14
+    PUSHBUTTON      "&Options",IDC_OPTIONS,540,60,67,14
+    DEFPUSHBUTTON   "&Save File",IDC_IO_SAVEFILE,540,22,67,14
+    PUSHBUTTON      "&Open File",IDC_IO_OPENNEW,540,6,67,14,BS_CENTER
+    PUSHBUTTON      "About",IDC_SHOWABOUT,540,76,67,14
+    PUSHBUTTON      "Save && &Edit",IDC_IO_EDIT,540,38,67,14
+END
+
+IDD_PROGRESS DIALOGEX 0, 0, 278, 25
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Working..."
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",0x0,7,7,264,11
+END
+
+IDD_TAXONOMYEDITOR DIALOGEX 0, 0, 306, 312
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Subject.Category"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TAXONOMY_CATEGORIES,"SysTreeView32",TVS_HASBUTTONS | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | WS_HSCROLL | WS_TABSTOP,7,23,292,261,WS_EX_CLIENTEDGE
+    COMBOBOX        IDC_TAXONOMY_SCALE,7,7,292,92,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Close",IDOK,241,291,58,13
+END
+
+IDD_HELPGUIDE DIALOGEX 0, 0, 522, 358
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Help Guide"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_HELPGUIDE_TEXT,"RichEdit20A",ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_TABSTOP,8,8,506,342,WS_EX_STATICEDGE
+    LTEXT           "",IDC_STATIC,0,0,8,8,WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 277
+        VERTGUIDE, 14
+        VERTGUIDE, 24
+        VERTGUIDE, 90
+        VERTGUIDE, 100
+        VERTGUIDE, 214
+        VERTGUIDE, 221
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 244
+        HORZGUIDE, 144
+        HORZGUIDE, 159
+        HORZGUIDE, 174
+        HORZGUIDE, 189
+    END
+
+    IDD_PREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 514
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 350
+        HORZGUIDE, 257
+    END
+
+    IDD_REPOSITORY, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 513
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 350
+    END
+
+    IDD_HEADER, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 514
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 350
+    END
+
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 607
+        VERTGUIDE, 540
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 378
+    END
+
+    IDD_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 18
+    END
+
+    IDD_TAXONOMYEDITOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 299
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 304
+        HORZGUIDE, 276
+        HORZGUIDE, 284
+        HORZGUIDE, 291
+    END
+
+    IDD_HELPGUIDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 514
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 350
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXT
+//
+
+CATEGORYDEFINITION.XML  TEXT                    "..\\..\\resources\\CategoryDefinition.xml"
+METADATADEFINITION.XML  TEXT                    "..\\..\\resources\\MetadataDefinition.xml"
+HELPGUIDE               TEXT                    "..\\..\\resources\\HelpGuide.rtf"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,0,0,0
+ PRODUCTVERSION 3,0,0,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x3L
+#else
+ FILEFLAGS 0x2L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000904b0"
+        BEGIN
+            VALUE "CompanyName", "ESO/ESA/NASA"
+            VALUE "FileDescription", "The ESO/ESA/NASA FITS Liberator"
+            VALUE "FileVersion", "3.0"
+            VALUE "InternalName", "FitsLiberator"
+            VALUE "LegalCopyright", "Copyright  ESO/ESA/NASA (C) 2005"
+            VALUE "OriginalFilename", "FitsLiberator.exe"
+            VALUE "ProductName", "The ESO/ESA/NASA FITS Liberator"
+            VALUE "ProductVersion", "3.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x9, 1200
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "Resources.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""Version.h""\r\n"
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_OPTIONS DLGINIT
+BEGIN
+    IDC_OPTIONS_GUESS, 0x403, 12, 0
+0x6550, 0x6372, 0x6e65, 0x6174, 0x6567, 0x0073, 
+    IDC_OPTIONS_GUESS, 0x403, 16, 0
+0x654d, 0x6964, 0x6e61, 0xb120, 0x5320, 0x6474, 0x6544, 0x0076, 
+    IDC_OPTIONS_GUESS, 0x403, 14, 0
+0x654d, 0x6e61, 0xb120, 0x5320, 0x6474, 0x6544, 0x0076, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDC_GLOBAL_PREVIEW      "Enabled/disable preview"
+    IDC_GLOBAL_UNDEFINED    "Show/hide undefined pixels"
+    IDC_GLOBAL_WHITE        "Show/hide white clipped pixels"
+    IDC_GLOBAL_BLACK        "Show/hide black clipped pixels"
+    IDC_GLOBAL_FREEZE       "Keep current settings"
+    IDS_TAXONOMYEDITOR      "Edit..."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_HISTOGRAM_SLIDER    "Drag to set the black and white levels"
+    IDC_HISTOGRAM_MIN       "Minimum displayed value"
+    IDC_HISTOGRAM_MAX       "Maximum displayed value"
+    IDC_HISTOGRAM_WHITE     "White level"
+    IDC_HISTOGRAM_BLACK     "Black level"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_STRETCH_MAXRANGE    "Set Peak level"
+    IDC_STRETCH_RESET       "Reset Settings"
+    IDC_STRETCH_AUTOBACKGROUND "Insert Black level as Background level"
+    IDC_STRETCH_AUTOPEAK    "Insert White level as Peak level"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PLANE_CHANNEL_8     "Import as 8-bit image"
+    IDC_PLANE_CHANNEL_16    "Import as 16-bit image"
+    IDC_PLANE_CHANNEL_32    "Import as 32-bit image"
+    IDC_PLANE_UNDEFINED_BLACK "Import undefined values as black"
+    IDC_PLANE_UNDEFINED_TRANSPARENT "Import undefined values as transparent"
+    IDC_PLANE_FLIP          "Flip image about centered horisontal axis"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_STRETCH_FUNCTION    "Select Stretch Function"
+    IDC_STRETCH_BACKGROUND  "Set Background level"
+    IDC_STRETCH_RESCALE     "Set Scaled Peak level"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PREVIEW_ZOOMIN      "Increase zoom factor"
+    IDC_PREVIEW_ZOOMOUT     "Decrease zoom factor"
+    IDC_PREVIEW_ZOOMLIST    "Choose a zoom factor"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INVALIDBITDEPTH     "Invalid bitdepth"
+    IDS_FAILEDTOCREATEWINDOW "Failed to create window"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NAME                "Name"
+    IDS_VALUE               "Value"
+    IDS_ID                  "ID"
+    IDS_HEADER_HEADING      "Headers for HDU "
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PLANE_SELECTOR      "Change image and/or plane"
+    IDC_PLANE_WIDTH         "Image width"
+    IDC_PLANE_HEIGHT        "Image height"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_TOOL_MOVE           "Hand Tool (H)"
+    IDC_TOOL_ZOOM           "Zoom Tool (Z)"
+    IDC_TOOL_BACKGROUND     "Background Level Sampler Tool (B)"
+    IDC_TOOL_PEAK           "Peak Level Sampler Tool (P)"
+    IDC_TOOL_BLACK          "Black Level Picker Tool (S)"
+    IDC_TOOL_WHITE          "White Level Picker Tool (W)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STATS_PROGRESS_REAL "Calculating input image statistics"
+    IDS_STATS_RANGE_PROGRESS_REAL "Finding input image range"
+    IDS_STATS_PROGRESS_STRETCH "Calculating stretched image statistics"
+    IDS_STATS_RANGE_PROGRESS_STRETCH "Finding stretched image range"
+    IDS_IMAGE_LOAD_CHUNK    "Loading a tile of the image"
+    IDS_STRETCH_STRETCHING  "Stretching pixels"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VERSION             "Version:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STRETCH_LINEAR      "Linear"
+    IDS_STRETCH_ASINH       "ArcSinh(x)"
+    IDS_STRETCH_LOG         "Log(x)"
+    IDS_STRETCH_SQRT        "x^(1/2)"
+    IDS_STRETCH_CUBEROOT    "x^(1/3)"
+    IDS_STRETCH_ROOT4       "x^(1/4)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STRETCH_ROOT5       "x^(1/5)"
+    IDS_STRETCH_15          "x^1.5"
+    IDS_STRETCH_POW2        "x^2"
+    IDS_STRETCH_POW3        "x^3"
+    IDS_STRETCH_POW4        "x^4"
+    IDS_STRETCH_POW5        "x^5"
+    IDS_STRETCH_EXP         "exp(x)"
+    IDS_STRETCH_ASINHASINH  "ArcSinh(ArcSinh(x))"
+    IDS_STRETCH_ASINHSQRT   "ArcSinh(x^(1/2))"
+    IDS_STRETCH_LOGLOG      "Log(Log(x))"
+    IDS_STRETCH_LOGSQRT     "Log(x^(1/2))"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_GLOBAL_SCALED       "Show scaled values"
+    IDC_GLOBAL_STRETCHED    "Show stretched values"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_OK                  "Save image"
+    IDC_STRETCH_AUTOSCALE   "Sets Blk l. as Background l., sets Wht l. as Peak l., sets Scaled Peak l. to 10"
+    IDC_STRETCH_APPLYSTRETCH "Apply background, peak and scaled peak levels"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_STATISTICS_STDDEV_REAL "Standard deviation of Input image"
+    IDC_STATISTICS_MEDIAN_REAL "Median of Input image"
+    IDC_STATISTICS_MEAN_REAL "Mean of Input image"
+    IDC_STATISTICS_MAX_REAL "Maximum of Input image"
+    IDC_STATISTICS_MIN_REAL "Minimum of Input image"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PICKER_REAL         "Input value"
+    IDC_PICKER_Y            "Y-coordinate"
+    IDC_PICKER_X            "X-coordinate"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INVALID_HEADER      "Validation failed"
+    IDS_INVALID_ELEMENTCOUNT 
+                            "The value you have entered has the wrong number of elements. Elements are separated with a "";"". The expected number of elements is "
+    IDS_INVALID_REAL        "The number you have entered is not valid, the number is expected to be a real number such as:\r\n\r\n2.005e-3\r\n-10.374\r\n\r\nPlease correct your input."
+    IDS_INVALID_DATE        "The date you have entered is not valid, the expected format is YYYY-MM-DD (e.g. 2005-07-29). Please correct your input."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INVALID_DATETIME    "The date you have entered is not valid, the expected format is YYYY-MM-DD'T'HH':'MM (e.g. 2005-07-29T12:05). Please correct your input."
+    IDS_INVALID_TIME        "The time you have entered is not valid, the expected format is HH:MM (e.g. 12:05). Please correct your input."
+    IDS_INVALID_URLID       "The URL you have entered is not valid, the expected format is http://spacetelescope.org/. Please correct your input."
+    IDS_INVALID_URLRESOURCE "The URL you have entered is not valid, the expected format is http://spacetelescope.org/heic0503/image/a. Please correct your input."
+    IDS_INVALID_IVOID       "The URI you have entered is not valid, the expected format is ivo://eso.hubble. Please correct your input."
+    IDS_INVALID_IVOIDENTIFIER 
+                            "The URI you have entered is not valid, the expected format is ivo://nasa.opo/opo0511a. Please correct your input."
+    IDS_INVALID_IVORESOURCE "The URI you have entered is not valid, the expected format is ivo://ESO.HST/U2JZ060B. Please correct your input."
+END
+
+STRINGTABLE 
+BEGIN
+    IDCANCEL                "Unload plug-in"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_WARNING_NETWORK     "Performance is reduced when working with files over a network connection."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_IO_SAVEFILE         "Save file"
+    IDC_IO_OPENNEW          "Open new FITS file"
+    IDC_SHOWABOUT           "Show about box"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TITLE_BAR_TITLE     "ESA/ESO/NASA FITS Liberator 3"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "Version.h"
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

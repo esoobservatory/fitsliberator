@@ -1,0 +1,4 @@
+CC	= cc
+FLAGS	= -DULTRIX -Dstd1
+LIB	= oal.a -lm
+RANLIB  = echo ranlib
