@@ -1,0 +1,9 @@
+libtiff.dll
+libtiff.ilk
+libtiff.lib
+libtiff.pdb
+libtiff_i.exp
+libtiff_i.lib
+libtiff.dll.manifest
+tiffconf.h
+tif_config.h

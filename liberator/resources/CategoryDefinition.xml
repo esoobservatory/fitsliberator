@@ -1,0 +1,303 @@
+<CategoryDefinition>
+  <Scale>A Solar System</Scale>
+  <Scale>B Milky Way</Scale>
+  <Scale>C Local Universe</Scale>
+  <Scale>D Early Universe</Scale>
+  <Scale>E Unspecified</Scale>
+  <Category Definition="1. Planet">
+    <Category Definition="1. [Type]">
+      <Category Definition="1. Terrestrial"/>
+      <Category Definition="2. Gas Giant"/>
+    </Category>
+    <Category Definition="2. [Feature]">
+      <Category Definition="1. Surface">
+        <Category Definition="1. Mountain"/>
+        <Category Definition="2. Canyon"/>
+        <Category Definition="3. Volcanic"/>
+        <Category Definition="4. Impact"/>
+        <Category Definition="5. Erosion"/>
+        <Category Definition="6. Liquid"/>
+        <Category Definition="7. Ice"/>
+      </Category>
+      <Category Definition="2. Atmosphere">
+        <Category Definition="1. Cloud"/>
+        <Category Definition="2. Storm"/>
+        <Category Definition="3. Belt"/>
+        <Category Definition="4. Aurora"/>
+      </Category>
+    </Category>
+    <Category Definition="3. [Special Cases]">
+      <Category Definition="1. Transiting"/>
+      <Category Definition="2. Hot Jupiter"/>
+      <Category Definition="3. Pulsar planet"/>
+    </Category>
+    <Category Definition="4. Satellite">
+      <Category Definition="1. [Feature]">
+        <Category Definition="1. Surface">
+          <Category Definition="1. Mountain"/>
+          <Category Definition="2. Canyon"/>
+          <Category Definition="3. Volcanic"/>
+          <Category Definition="4. Impact"/>
+          <Category Definition="5. Erosion"/>
+          <Category Definition="6. Liquid"/>
+          <Category Definition="7. Ice"/>
+        </Category>
+        <Category Definition="Atmosphere"/>
+      </Category>
+    </Category>
+    <Category Definition="5. Ring"/>
+  </Category>
+  <Category Definition="2. Interplanetary Body">
+    <Category Definition="1. Dwarf Planet"/>
+    <Category Definition="2. Comet">
+      <Category Definition="1. Nucleus"/>
+      <Category Definition="2. Coma"/>
+      <Category Definition="3. Tail">
+        <Category Definition="1. Dust"/>
+        <Category Definition="2. Gas"/>
+      </Category>
+    </Category>
+    <Category Definition="3. Asteroid"/>
+    <Category Definition="4. Meteoroid"/>
+  </Category>
+  <Category Definition="3. Star">
+    <Category Definition="1. [Evolutionary Stage]">
+      <Category Definition="1. Protostar"/>
+      <Category Definition="2. Young Stellar Object"/>
+      <Category Definition="3. Main Sequence"/>
+      <Category Definition="4. Red Giant"/>
+      <Category Definition="5. Red Supergiant"/>
+      <Category Definition="6. Blue Supergiant"/>
+      <Category Definition="7. White Dwarf"/>
+      <Category Definition="8. Supernova"/>
+      <Category Definition="9. Neutron Star">
+        <Category Definition="1. Pulsar"/>
+        <Category Definition="2. Magnetar"/>
+      </Category>
+      <Category Definition="10. Black Hole"/>
+    </Category>
+    <Category Definition="2. [Type]">
+      <Category Definition="1. Variable">
+        <Category Definition="1. Pulsating"/>
+        <Category Definition="2. Irregular"/>
+        <Category Definition="3. Eclipsing"/>
+        <Category Definition="4. Flare Star"/>
+        <Category Definition="5. Nova"/>
+        <Category Definition="6. X-Ray Binary"/>
+      </Category>
+      <Category Definition="2. Carbon"/>
+      <Category Definition="3. Brown Dwarf"/>
+      <Category Definition="4. Wolf-Rayet"/>
+      <Category Definition="5. Blue Straggler"/>
+      <Category Definition="6. Exotic"/>
+    </Category>
+    <Category Definition="3. [Spectral Type]">
+      <Category Definition="1. O"/>
+      <Category Definition="2. B"/>
+      <Category Definition="3. A"/>
+      <Category Definition="4. F"/>
+      <Category Definition="5. G"/>
+      <Category Definition="6. K"/>
+      <Category Definition="7. M"/>
+      <Category Definition="8. L"/>
+      <Category Definition="9. T"/>
+    </Category>
+    <Category Definition="4. [Population]">
+      <Category Definition="1. I"/>
+      <Category Definition="2. II"/>
+      <Category Definition="3. III"/>
+    </Category>
+    <Category Definition="5. [Feature]">
+      <Category Definition="1. Photosphere">
+        <Category Definition="1. Granulation"/>
+        <Category Definition="2. Sunspot"/>
+      </Category>
+      <Category Definition="2. Chromosphere">
+        <Category Definition="1. Flare"/>
+        <Category Definition="2. Facula"/>
+      </Category>
+      <Category Definition="3. Corona">
+        <Category Definition="1. Prominence"/>
+      </Category>
+    </Category>
+    <Category Definition="6. [Grouping]">
+      <Category Definition="1. Binary"/>
+      <Category Definition="2. Triple"/>
+      <Category Definition="3. Multiple"/>
+      <Category Definition="4. Cluster">
+        <Category Definition="1. Open"/>
+        <Category Definition="2. Globular"/>
+      </Category>
+    </Category>
+    <Category Definition="7. Circumstellar Material">
+      <Category Definition="1. Planetary System"/>
+      <Category Definition="2. Disk">
+        <Category Definition="1. Protoplanetary"/>
+        <Category Definition="2. Accretion"/>
+        <Category Definition="3. Debris"/>
+      </Category>
+      <Category Definition="3. Outflow">
+        <Category Definition="1. Solar Wind"/>
+        <Category Definition="2. Coronal Mass Ejection"/>
+      </Category>
+    </Category>
+  </Category>
+  <Category Definition="4. Nebula">
+    <Category Definition="1. [Type]">
+      <Category Definition="1. Interstellar Medium"/>
+      <Category Definition="2. Star Formation"/>
+      <Category Definition="3. Planetary"/>
+      <Category Definition="4. Supernova Remnant"/>
+      <Category Definition="5. Jet"/>
+    </Category>
+    <Category Definition="2. [Appearance]">
+      <Category Definition="1. Emission">
+        <Category Definition="1. H II Region"/>
+      </Category>
+      <Category Definition="2. Reflection">
+        <Category Definition="1. Light Echo"/>
+      </Category>
+      <Category Definition="3. Dark">
+        <Category Definition="1. Molecular Cloud"/>
+        <Category Definition="2. Bok Globule"/>
+        <Category Definition="3. Proplyd"/>
+      </Category>
+    </Category>
+  </Category>
+  <Category Definition="5. Galaxy">
+    <Category Definition="1. [Type]">
+      <Category Definition="1. Spiral"/>
+      <Category Definition="2. Barred"/>
+      <Category Definition="3. Lenticular"/>
+      <Category Definition="4. Elliptical"/>
+      <Category Definition="5. Ring"/>
+      <Category Definition="6. Irregular"/>
+      <Category Definition="7. Interacting"/>
+      <Category Definition="8. Gravitationally Lensed"/>
+    </Category>
+    <Category Definition="2. [Size]">
+      <Category Definition="1. Giant"/>
+      <Category Definition="2. Dwarf"/>
+    </Category>
+    <Category Definition="3. [Activity]">
+      <Category Definition="1. Normal"/>
+      <Category Definition="2. AGN">
+        <Category Definition="1. Quasar"/>
+        <Category Definition="2. Seyfert"/>
+        <Category Definition="3. Blazar"/>
+        <Category Definition="4. Liner"/>
+      </Category>
+      <Category Definition="3. Starburst"/>
+      <Category Definition="4. Ultraluminous"/>
+    </Category>
+    <Category Definition="4. [Component]">
+      <Category Definition="1. Bulge"/>
+      <Category Definition="2. Bar"/>
+      <Category Definition="3. Disk"/>
+      <Category Definition="4. Halo"/>
+      <Category Definition="5. Ring"/>
+      <Category Definition="6. Central Black Hole"/>
+      <Category Definition="7. Spiral Arm"/>
+      <Category Definition="8. Dust Lane"/>
+	  <Category Definition="9. Center/Core"/>
+    </Category>
+    <Category Definition="5. [Grouping]">
+      <Category Definition="1. Pair"/>
+      <Category Definition="2. Multiple"/>
+      <Category Definition="3. Cluster"/>
+      <Category Definition="4. Supercluster"/>
+    </Category>
+  </Category>
+  <Category Definition="6. Cosmology">
+    <Category Definition="1. [Morphology]">
+      <Category Definition="1. Deep Field"/>
+      <Category Definition="2. Large-Scale Structure"/>
+      <Category Definition="3. Cosmic Background"/>
+    </Category>
+    <Category Definition="2. [Phenomenon]">
+      <Category Definition="1. Lensing"/>
+      <Category Definition="2. Gamma Ray Burst"/>
+      <Category Definition="3. Dark Matter"/>
+    </Category>
+  </Category>
+  <Category Definition="7. Sky Phenomenon">
+    <Category Definition="1. Night Sky">
+      <Category Definition="1. Constellation"/>
+      <Category Definition="2. Asterism"/>
+      <Category Definition="3. Milky Way"/>
+      <Category Definition="4. Trail">
+        <Category Definition="1. Meteor"/>
+        <Category Definition="2. Star"/>
+        <Category Definition="3. Satellite"/>
+      </Category>
+      <Category Definition="5. Zodiacal Light">
+        <Category Definition="1. Gegenschein"/>
+      </Category>
+      <Category Definition="6. Night glow"/>
+    </Category>
+    <Category Definition="2. Eclipse">
+      <Category Definition="1. Solar">
+        <Category Definition="1. Total"/>
+        <Category Definition="2. Partial"/>
+        <Category Definition="3. Annular"/>
+      </Category>
+      <Category Definition="2. Lunar">
+        <Category Definition="1. Total"/>
+        <Category Definition="2. Partial"/>
+        <Category Definition="3. Penumbral"/>
+      </Category>
+      <Category Definition="3. Occultation"/>
+      <Category Definition="4. Transit"/>
+    </Category>
+    <Category Definition="3. Light Phenomenon">
+      <Category Definition="1. Sunrise-Sunset">
+        <Category Definition="1. Green flash"/>
+        <Category Definition="2. Refractive Distortion"/>
+        <Category Definition="3. Sun Pillar"/>
+      </Category>
+      <Category Definition="2. Cloud">
+        <Category Definition="1. Iridescent"/>
+        <Category Definition="2. Noctilucent"/>
+        <Category Definition="3. Nacreous"/>
+        <Category Definition="4. Corona"/>
+        <Category Definition="5. Glory"/>
+      </Category>
+      <Category Definition="3. Rainbow">
+        <Category Definition="1. Moonbow"/>
+        <Category Definition="2. Fogbow"/>
+      </Category>
+      <Category Definition="4. Halo">
+        <Category Definition="1. Circle"/>
+        <Category Definition="2. Parhelia"/>
+        <Category Definition="3. Arc"/>
+      </Category>
+      <Category Definition="5. Ray-Shadow">
+        <Category Definition="1. Crepuscular ray"/>
+        <Category Definition="2. Anti-crepuscular ray"/>
+        <Category Definition="3. Earth shadow"/>
+      </Category>
+      <Category Definition="6. Lightning"/>
+      <Category Definition="7. Aurora"/>
+    </Category>
+  </Category>
+  <Category Definition="8. Technology">
+    <Category Definition="1. Observatory">
+      <Category Definition="1. Facility"/>
+      <Category Definition="2. Telescope"/>
+      <Category Definition="3. Instrument"/>
+      <Category Definition="4. Detector"/>
+    </Category>
+    <Category Definition="2. Spacecraft">
+      <Category Definition="1. Orbiter"/>
+      <Category Definition="2. Probe"/>
+      <Category Definition="3. Lander"/>
+      <Category Definition="4. Manned"/>
+	  <Category Definition="5. Launch Vehicle"/>
+    </Category>
+  </Category>
+  <Category Definition="9. People">
+    <Category Definition="1. Orbiter"/>
+    <Category Definition="2. Astronaut"/>
+    <Category Definition="3. Other/General"/>
+  </Category>
+</CategoryDefinition>

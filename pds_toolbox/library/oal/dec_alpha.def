@@ -1,0 +1,7 @@
+CC	  = cc
+FLAGS     = -DALPHA_OSF
+LIB	  = oal.a -lm
+RANLIB    = echo ranlib
+IDL_FLAGS =  
+IDL_LIBS  = -lc -lm
+IDL_LD    = -S -shared
