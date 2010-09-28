@@ -64,4 +64,5 @@
 cd ../library/
 env CFLAGS="-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk -arch x86_64 -arch i386 -g -O2" LDFLAGS="-Wl,-syslibroot,/Developer/SDKs/MacOSX10.5.sdk -arch x86_64 -arch i386" CC=gcc-4.2 ./configure
 env CFLAGS="-mmacosx-version-min=10.5 -isysroot /Developer/SDKs/MacOSX10.5.sdk -arch x86_64 -arch i386 -g -O2" LDFLAGS="-Wl,-syslibroot,/Developer/SDKs/MacOSX10.5.sdk -arch x86_64 -arch i386" CC=gcc-4.2 make
+cp -f libcfitsio.a ../binaries/
 

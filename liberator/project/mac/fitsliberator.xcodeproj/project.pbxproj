@@ -14,10 +14,22 @@
 				757D1C8E124A3116009C3C21 /* ShellScript */,
 			);
 			dependencies = (
-				75EF5AE4124A621E005D4283 /* PBXTargetDependency */,
+				75E9B11F1250F1E8003CD87A /* PBXTargetDependency */,
 			);
 			name = FITSLiberator3.dmg;
 			productName = FITSLiberator3.dmg;
+		};
+		75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 75E9B0DF1250EB09003CD87A /* Build configuration list for PBXAggregateTarget "FITS Liberator.mpkg" */;
+			buildPhases = (
+				75E9B0BE1250EAED003CD87A /* ShellScript */,
+			);
+			dependencies = (
+				75E9B0E31250EF8F003CD87A /* PBXTargetDependency */,
+			);
+			name = "FITS Liberator.mpkg";
+			productName = "Package Builder";
 		};
 /* End PBXAggregateTarget section */
 
@@ -221,12 +233,19 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
-		75EF5AE3124A621E005D4283 /* PBXContainerItemProxy */ = {
+		75E9B0E21250EF8F003CD87A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D01CCC60486CAD60068D4B7;
+			remoteGlobalIDString = 8D01CCC60486CAD60068D4B7 /* FitsLiberator */;
 			remoteInfo = FitsLiberator;
+		};
+		75E9B11E1250F1E8003CD87A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */;
+			remoteInfo = "FITS Liberator.mpkg";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -462,7 +481,7 @@
 		753546930E80FAE00082E457 /* TileControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileControl.h; sourceTree = "<group>"; };
 		753546970E80FB670082E457 /* ImageTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageTile.cpp; sourceTree = "<group>"; };
 		753546980E80FB670082E457 /* TileControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileControl.cpp; sourceTree = "<group>"; };
-		75617D280CA400970015972A /* libcfitsio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcfitsio.a; sourceTree = "<group>"; };
+		75617D280CA400970015972A /* libcfitsio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcfitsio.a; path = ../binaries/libcfitsio.a; sourceTree = "<group>"; };
 		75617D760CA409DF0015972A /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = tinystr.cpp; sourceTree = "<group>"; };
 		75617D770CA409DF0015972A /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = tinystr.h; sourceTree = "<group>"; };
 		75617D780CA409DF0015972A /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
@@ -2200,6 +2219,7 @@
 			projectRoot = ../..;
 			targets = (
 				8D01CCC60486CAD60068D4B7 /* FitsLiberator */,
+				75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */,
 				757D1C8F124A3116009C3C21 /* FITSLiberator3.dmg */,
 			);
 		};
@@ -2251,7 +2271,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -ex\n\n[ \"$BUILD_VARIANTS\" = \"normal\" ] || exit 0\n\nASSETS=\"$SRCROOT/../../installer/\"\nDOCS=\"$SRCROOT/../../documentation/\"\n\ndmg=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\";\ndmg_template=\"$ASSETS/mac/FITSLiberatorTemplate.dmg\";\ndmg_path=\"/Volumes/FITS Liberator 3\"\n\n\n#\n# Clean DMG\n#\nif [ $ACTION == \"clean\" ]; then\n\trm -f $dmg;\n\texit;\nfi\n\n#\n# Build DMG\n#\nif [ $ACTION == \"build\" ]; then\n\t# Remove previous image\n\trm -f $dmg $dmg-converted.dmg;\t\n\n\t# Make copy of template\n\tditto $dmg_template $dmg;\n\t\n\t# Mount\n\tdevice=$(hdiutil attach -readwrite -noverify -noautoopen \"$dmg\" | egrep '^/dev/' | sed 1q | awk '{print $1}');\n\tsleep 5;\n\n\t# Copy files\n\tditto \"$BUILT_PRODUCTS_DIR/FITS Liberator.app\" \"$dmg_path/FITS Liberator.app\"\n\tditto $DOCS/License.rtf \"$dmg_path/\"\n\tditto $ASSETS/mac/background.png \"$dmg_path/.background/\"\n\tditto $DOCS/ReleaseNotes.html \"$dmg_path/\"\n\tditto $DOCS/UserGuide.pdf \"$dmg_path/\"\n\n\t# Unmount\t\n\thdiutil detach $device;\n\n\t# Convert\n\thdiutil convert \"$dmg\" -format UDZO -imagekey zlib-level=9 -o \"$dmg-converted.dmg\"\n\thdiutil internet-enable -yes \"$dmg-converted.dmg\"\n\t\n\tmv \"$dmg-converted.dmg\" $SRCROOT/../../binaries/$PRODUCT_NAME\n\texit;\nfi\n\n\nexit\ndir=\"$TEMP_FILES_DIR/disk\"\ndmg=\"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.dmg\"\n\nrm -rf \"$dir\"\nmkdir \"$dir\"\ncp -R \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.saver\" \"$dir\"\nrm -f \"$dmg\"\nhdiutil create -srcfolder \"$dir\" -volname \"$PROJECT_NAME\" \"$dmg\"\nhdiutil internet-enable -yes \"$dmg\"\nrm -rf \"$dir\"\n";
+			shellScript = "set -ex\n\n[ \"$BUILD_VARIANTS\" = \"normal\" ] || exit 0\n\nASSETS=\"$SRCROOT/../../installer/\"\nDOCS=\"$SRCROOT/../../documentation/\"\n\ndmg=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\";\ndmg_template=\"$ASSETS/mac/FITSLiberatorTemplate.dmg\";\ndmg_path=\"/Volumes/FITS Liberator 3\"\n\n\n#\n# Clean DMG\n#\nif [ $ACTION == \"clean\" ]; then\n\trm -f $dmg;\n\texit;\nfi\n\n#\n# Build DMG\n#\nif [ $ACTION == \"build\" ]; then\n\t# Remove previous image\n\trm -f $dmg $dmg-converted.dmg;\t\n\n\t# Make copy of template\n\tditto $dmg_template $dmg;\n\t\n\t# Mount\n\tdevice=$(hdiutil attach -readwrite -noverify -noautoopen \"$dmg\" | egrep '^/dev/' | sed 1q | awk '{print $1}');\n\tsleep 5;\n\n\t# Copy files\n\tditto \"$SRCROOT/../../binaries/FITS Liberator.mpkg\" \"$dmg_path/FITS Liberator.mpkg\"\n\tditto $DOCS/License.rtf \"$dmg_path/\"\n\tditto $ASSETS/mac/background.png \"$dmg_path/.background/\"\n\tditto $DOCS/ReleaseNotes.html \"$dmg_path/\"\n\tditto $DOCS/UserGuide.pdf \"$dmg_path/\"\n\n\t# Unmount\t\n\thdiutil detach $device;\n\n\t# Convert\n\thdiutil convert \"$dmg\" -format UDZO -imagekey zlib-level=9 -o \"$dmg-converted.dmg\"\n\thdiutil internet-enable -yes \"$dmg-converted.dmg\"\n\t\n\tmv \"$dmg-converted.dmg\" $SRCROOT/../../binaries/$PRODUCT_NAME\n\texit;\nfi\n\n\nexit\ndir=\"$TEMP_FILES_DIR/disk\"\ndmg=\"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.dmg\"\n\nrm -rf \"$dir\"\nmkdir \"$dir\"\ncp -R \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.saver\" \"$dir\"\nrm -f \"$dmg\"\nhdiutil create -srcfolder \"$dir\" -volname \"$PROJECT_NAME\" \"$dmg\"\nhdiutil internet-enable -yes \"$dmg\"\nrm -rf \"$dir\"\n";
+		};
+		75E9B0BE1250EAED003CD87A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -ex\n\n[ \"$BUILD_VARIANTS\" = \"normal\" ] || exit 0\n\nASSETS=\"$SRCROOT/../../installer/mac/\"\n\nmpkg=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\";\n\n#\n# Clean DMG\n#\nif [ $ACTION == \"clean\" ]; then\n\trm -Rf $mpkg;\n\texit;\nfi\n\n#\n# Build DMG\n#\nif [ $ACTION == \"build\" ]; then\n\t# Remove previous image\n\trm -Rf $mpkg;\t\n\n\t\n\n\t# Build meta package\n\tcd $ASSETS;\n\t/Developer/usr/bin/packagemaker --doc \"FITS Liberator.pmdoc\" -o \"$mpkg\"\n\t\n\t# Move to binaries\n\tcd $SRCROOT/../../binaries/;\n\trm -Rf \"$PRODUCT_NAME\"\n\tmv \"$mpkg\" .\n\n\texit;\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2419,10 +2452,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		75EF5AE4124A621E005D4283 /* PBXTargetDependency */ = {
+		75E9B0E31250EF8F003CD87A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8D01CCC60486CAD60068D4B7 /* FitsLiberator */;
-			targetProxy = 75EF5AE3124A621E005D4283 /* PBXContainerItemProxy */;
+			targetProxy = 75E9B0E21250EF8F003CD87A /* PBXContainerItemProxy */;
+		};
+		75E9B11F1250F1E8003CD87A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */;
+			targetProxy = 75E9B11E1250F1E8003CD87A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2470,6 +2508,7 @@
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/../../../cfitsio/binaries\"",
 					"\"$(SRCROOT)/../../../libtiff/binaries\"",
 					"\"$(SRCROOT)/../../../zlib/binaries\"",
 					"\"$(SRCROOT)/../../../boost/binaries\"",
@@ -2545,6 +2584,27 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = FITSLiberator3.dmg;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		75E9B0C01250EAED003CD87A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "FITS Liberator.mpkg";
+			};
+			name = Debug;
+		};
+		75E9B0C11250EAED003CD87A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "FITS Liberator.mpkg";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -2626,6 +2686,7 @@
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/../../../cfitsio/binaries\"",
 					"\"$(SRCROOT)/../../../libtiff/binaries\"",
 					"\"$(SRCROOT)/../../../zlib/binaries\"",
 					"\"$(SRCROOT)/../../../boost/binaries\"",
@@ -2673,6 +2734,15 @@
 			buildConfigurations = (
 				757D1C90124A3116009C3C21 /* Debug */,
 				757D1C91124A3116009C3C21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		75E9B0DF1250EB09003CD87A /* Build configuration list for PBXAggregateTarget "FITS Liberator.mpkg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E9B0C01250EAED003CD87A /* Debug */,
+				75E9B0C11250EAED003CD87A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -83,6 +83,7 @@
         <Category Definition="3. Eclipsing"/>
         <Category Definition="4. Flare Star"/>
         <Category Definition="5. Nova"/>
+        <Category Definition="6. X-Ray Binary"/>
       </Category>
       <Category Definition="2. Carbon"/>
       <Category Definition="3. Brown Dwarf"/>
@@ -198,6 +199,7 @@
       <Category Definition="6. Central Black Hole"/>
       <Category Definition="7. Spiral Arm"/>
       <Category Definition="8. Dust Lane"/>
+	  <Category Definition="9. Center/Core"/>
     </Category>
     <Category Definition="5. [Grouping]">
       <Category Definition="1. Pair"/>
@@ -283,12 +285,19 @@
       <Category Definition="1. Facility"/>
       <Category Definition="2. Telescope"/>
       <Category Definition="3. Instrument"/>
+      <Category Definition="4. Detector"/>
     </Category>
     <Category Definition="2. Spacecraft">
       <Category Definition="1. Orbiter"/>
       <Category Definition="2. Probe"/>
       <Category Definition="3. Lander"/>
       <Category Definition="4. Manned"/>
+	  <Category Definition="5. Launch Vehicle"/>
     </Category>
+  </Category>
+  <Category Definition="9. People">
+    <Category Definition="1. Orbiter"/>
+    <Category Definition="2. Astronaut"/>
+    <Category Definition="3. Other/General"/>
   </Category>
 </CategoryDefinition>
