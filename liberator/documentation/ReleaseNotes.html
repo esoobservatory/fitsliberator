@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<title>FITS Liberator 2.3 Release Notes</title>
+		<title>FITS Liberator 3.0 Release Notes</title>
 		<style type="text/css">
 			body, td { font-family: Lucida Grande, Calibri, Verdana, sans-serif; font-size: small; }
 			h1	 { font-family: Optima, Corbel, Verdana, sans-serif; font-size: medium; text-transform: uppercase; }
@@ -10,63 +10,48 @@
 		</style>
 	</head>
 	<body>
-		<h1>New in version 2.3</h1>
-		<p>The new version 2.3 of the ESA/ESO/NASA Photoshop FITS Liberator has the following added features:</p>
+		<h1>New in version 3.0</h1>
+		<p>The new version 3.0 of the ESA/ESO/NASA FITS Liberator has the following added features:</p>
 		<ul>
-			<li>FITS Liberator now uses more than one processor (if available) to process images. </li>
-			<li>Support for planetary images through the PDS image format.</li>
-			<li>Metadata editing support for Photoshop CS4.</li>
-			<li>Several options can now be set like e.g. choosing between different initial guesses.</li>
+			<li>FITS Liberator is now a stand-alone application, which means that Photoshop is no longer required.</li>
+			<li>Faster processing (up to 35%) of medium-sized images through remarkably enhanced memory management and faster workflows for processing of large images through delayed application of stretch functions.</li>
+			<li>FITS Liberator saves TIFF files that open in virtually any image processing software.</li>
+			<li>Open-source code base available on <a href="http://code.google.com/p/fitsliberator">http://code.google.com/p/fitsliberator</a>.</li>
 		</ul>
-		<p><b>Notes on performance:</b></p>
-		<p>Letting Photoshop use all available memory can significantly increase the performance of FITS Liberator. Changing this setting is done through the menu Edit, going to Preferences and then choosing Performance. Here it is possible to adjust the amount of memory (RAM) used by Photoshop and increasing to e.g. 100% can increase the performance of FITS Liberator significantly.</p>
-		<p>When opening files directly from a network drive performance may decrease especially when zooming and panning the preview image. If performance problems are encountered it is recommended that the file is copied to the local hard disk drive before opening in FITS Liberator.</p>
-		<p>If several (large) files are opened into Photoshop performance may decrease a bit, however, the plugin has been thoroughly benchmarked and it has been found to be significantly faster than previous versions in all cases.</p>
-		<p>When a calculation intensive operation is initiated, like e.g. changing the stretch function, the plugin will not respond to any user input until the calculations are done or the user presses the escale (Esc) button. A small delay from pressing the escape button till the plugin cancels the operation may be experienced.</p>
-
-		<p><b>Notes on new options</b></p>
-		<p>A new button labeled Options has been added to the Graphical User Interface (GUI). Clicking this button opens a new window where a range of options can be set. The initial guess can be changed between the following:</p>
-		<ul>
-		<li>Percentage (which enables the two fields Black Level and White Level). The values in these fields indicate the placement of the black and white levels in the histogram in percentage of the total number of pixels.</li>
-		<li>Median +/- stdev. This option sets the inital guesses for the black and white levels to be the value of the median minus and plus the standard deviation, respectively.</li>
-		<li>Mean +/- stdev. This option sets the inital guesses for the black and white levels to be the value of the mean minus and plus the standard deviation, respectively.</li>
-		</ul>
-		<p>The default stretch function can be changed through the drop-down button labeled Stretch. Likewise, the default scaled peak level can be changed in the textfield labeled Scaled Peak Level.</p>
-		<p>The pane labeled Histogram Markers provides a range of various markers that can be enabled in the histogram including the zero, background and peak levels and a range of the available statistical data.</p>
-		<p>The options pop-up window also provides two buttons. The Clear History button deletes all preferences stored by the FITS Liberator and the button Defaults sets the options to their default values. These markers will all appear with different colors.</p>
+		<h1>Notes on performance:</h1>
+		<p>The performance of the FITS Liberator is a continuing issue when working with large files and dependent on resources available on the local system. If the FITS file is too large compared to the amount of available physical memory (RAM) then FITS Liberator will have to use the hard disk drive to temporarily store image information. In version 3.0 of FITS Liberator the performance is enhanced significantly from the previous version, although dependent on how FITS Liberator is used and on the local computer. In the following a few tips to how to obtain a significant performance gain are given.</p>
+		<p><b>Work flow optimization</b></p>
+		<p>Since FITS Liberator 3.0 is standalone more than one instance may be loaded simultaneously (Windows only). This means that the user has the ability to have, say, three or four FITS files open at the same time (which could be the same picture in different colour filters). In this way adjustments can be quickly done since the user can instantly change between the open instances, tweak the export settings and save the TIFF file. Before, the user had to reload the FITS Liberator in Photoshop since only one instance was allowed at the same time and the FITS Liberator exited after having imported the image into Photoshop.</p>
+		<p><b>Operating system and physical memory (RAM)</b></p>
+		<p>FITS Liberator 3.0 is a 32 bit application (on both Mac and Windows). There is therefore a hard limit to how much memory it may use at any given time. However, it has been possible to tweak the performance such that if the user’s operating system is 64 bit (be it either Mac or Windows) somewhat more memory can be used (typically 2.5 GB rather than 1.5 GB in a 32 bit system). This means that larger images may be fully loaded at any given time and thus an increase in performance of up to 35 percent may be gained.</p>
+		<p>Another feature exists on 64 bit operating systems with a large amount of RAM (8 GB or more). In this case when running several instances of FITS Liberator (on Windows only) each instance will most likely have its own physical memory space and the system does therefore not have to swap to the disk as much. This enhances performance too.</p>
+		<p><b>Applying the stretch values</b></p>
+		<p>A new feature has been added to the FITS Liberator graphical user interface named “Apply values”, which is a button located next to the “Auto scaling” button. In the Options Dialog a check box enables / disables the “Apply values” button. When the button is enabled the Background level, Peak level and Scaled peak level text fields to not force a re-calculation of the image statistics. In this way the user may type in each or some of these values and then click the “Apply values” buttons after which the FITS Liberator will calculate the image statistics etc. In this way the user may change more than one value at a time thus potentially saving a lot of time by only making the FITS Liberator do the calculations once.</p>
+		<p><b>Flipping the output image</b></p>
+		<p>If the image is flipped (i.e. check box 71 in Figure 10 is checked) when saving to a TIFF file the performance upon loading into, e.g., Photoshop may be decreased if the FITS file is large. This is due to the fact that Photoshop has to flip the image and that can take some time if the image is huge. In this case it may be advantageous to not flip the image depending on the situation.</p>
 
 		<h1>Requirements</h1>
-		<p>The ESA/ESO/NASA Photoshop FITS Liberator works on Windows PCs (Windows XP or 
-            newer) and Macs (OS X 10.4 or newer) and is optimized for Photoshop CS4 and CS3 
-            (32 bit support). The plug-in also works in Photoshop CS2, Photoshop CS (only 16 
-            bit support), Photoshop 7.0 (only 15 bit support), and Photoshop Elements. Note 
-            that Photoshop Elements 3 and above only support up to 16 bit images and 
-            Photoshop Elements 2 only support 8 bit images. Note, on Mac, The ESA/ESO/NASA 
-            Photoshop FITS Liberator only supports Photoshop CS3 or above.</p>
-    <h1>Supported Photoshop versions</h1>
-    <table>
-            <tr><td>&nbsp;</td><td>CS4</td><td>CS3</td><td>CS2<sup>†</sup></td><td>CS<sup>†</sup></td><td>7.0<sup>‡</sup></td></tr>
-            <tr><td>Windows XP</td><td>•</td><td>•</td><td>•</td><td>•</td><td>•</td></tr>
-            <tr><td>Windows Vista</td><td>•</td><td>•</td><td>•</td><td>•</td><td>•</td></tr>
-            <tr><td>Windows 7</td><td>•</td><td>•</td><td>•</td><td>•</td><td>•</td></tr>
-            <tr><td>Mac OS X Tiger (Mac OS X Tiger (10.4)<sup>*</sup></td><td>•</td><td>•</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>Mac OS X LeopardMac OS X Leopard (10.5)<sup>*</sup></td><td>•</td><td>•</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>Mac OS X Snow LeMac OS X Snow Leopard (10.6)<sup>*</sup></td><td>•</td><td>•</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-        </table>
-        <table class="notes">
-            <tr><td><sup>*</sup></td><td><a name="note.1">Version 2.3 only supports Intel-based Mac computers.</a></td></tr>
-            <tr><td><sup>†</sup></td><td><a name="note.2">Only 16-bit support.</a></td></tr>
-            <tr><td><sup>‡</sup></td><td><a name="note.2">Only 15-bit support.</a></td></tr>
-        </table>
+		
+		<p>Minimum requirements:
+		<ul>
+			<li>Windows PC (XP, Vista or Windows 7, all 32 or 64 bit) or Mac (OS X 10.4+)</li>
+			<li>Screen resolution of 1024 x 768 pixels or better</li>
+		</ul>
+		
+		Other limitations:
+		<ul>
+			<li>As the loading process is very I/O intensive, the performance may be decreased significantly when loading FITS files from a network drive. In this case the program will show a notification. It is recommended, if possible, to copy files to the local hard disk drive before opening them with the FITS Liberator.</li>
+		</ul>
+		</p>
+		
 		<h1>Development team</h1>
 		<table>
-		    <tr><td>Project Lead:Lead:</td><td>Lars Holm Nielsen</td></tr>
-			<tr><td>Core Functionality:</td><td>Kaspar K. Nielsen</td></tr>
-			<tr><td>Engine and GUI:</td><td>Teis Johansen</td></tr>
-			<tr><td>Scientific support:</td><td>Robert Hurt</td></tr>
-			<tr><td>Technical support and testing:</td><td>Robert Hurt, Zolt Levay, Bob Fosbury, Richard Hook and Aaron Anderson</td></tr>
+			<tr><td>Project Executive</td><td>Lars Lindberg Christensen</td></tr>
+		    <tr><td>Technical Project Manager</td><td>Lars Holm Nielsen</td></tr>
+			<tr><td>Developers:</td><td>Kaspar K. Nielsen &amp; Teis Johansen</td></tr>
+			<tr><td>Technical, scientific support and testing:</td><td>Robert Hurt &amp; David de Martin</td></tr>
 		</table>	
-		<p>The ESA/ESO/NASA Photoshop FITS Liberator uses <a href="http://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio.html">NASA's CFITSIO</a> library, <a href="http://www.grinninglizard.com/tinyxml/">TinyXML</a>, <a href="http://www.boost.org/libs/regex/">Boost C++ Libraries</a>, <a href="http://starbeam.jpl.nasa.gov/tools/pds-tools-package.shtml">Object Access Library</a>, and <a href="http://www.threadingbuildingblocks.org/">Intel Threading Building Blocks</a>.</p>
+		<p>The ESA/ESO/NASA FITS Liberator uses <a href="http://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio.html">NASA's CFITSIO</a> library, <a href="http://www.grinninglizard.com/tinyxml/">TinyXML</a>, <a href="http://www.boost.org/libs/regex/">Boost C++ Libraries</a>, <a href="http://starbeam.jpl.nasa.gov/tools/pds-tools-package.shtml">Object Access Library</a>, and <a href="http://www.threadingbuildingblocks.org/">Intel Threading Building Blocks</a>.</p>
 		<p>Adobe and Photoshop are either registered trademarks or trademarks of Adobe Systems Incorporated in the United States and/or other countries.</p>
 		<p>We kindly ask users to acknowledge the use of this plug-in in publicly accessible products (web, articles, books etc.) with the following statement: "This image was created with the help of the ESA/ESO/NASA Photoshop FITS Liberator".</p>
 		<h1>Links</h1>
