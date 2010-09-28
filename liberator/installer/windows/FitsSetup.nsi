@@ -31,8 +31,8 @@
 
 !define BANNER_FILE  "FitsSetup.bmp"
 !define ICON_FILE    "FitsSetup.ico"
-!define README_FILE  "ReadMe.rtf"
-!define LICENSE_FILE "License.rtf"
+!define README_FILE  "..\..\Resources\ReadMe.rtf"
+!define LICENSE_FILE "..\..\Resources\License.rtf"
 
 ;-------------------------------------------------------------------------------
 ; Macros
@@ -290,7 +290,7 @@ Section "Core Components"
     ; FITS Liberator plug-in
     ${InstallFile} "${SETUP_ROOT}"  "gdiplus.dll"                			"gdiplus.dll"
     ${InstallFile} "${SETUP_ROOT}"  "..\..\binaries\FitsLiberator.exe"		"FitsLiberator.exe"
-    ${InstallFile} "${SETUP_ROOT}"  "..\shared\UserGuide.pdf"				"UserGuide.pdf"
+    ${InstallFile} "${SETUP_ROOT}"  "..\..\resources\UserGuide.pdf"				"UserGuide.pdf"
     ${Directory}   "${SETUP_ROOT}"    
     
     ; Shortcut
