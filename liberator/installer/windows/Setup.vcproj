@@ -73,20 +73,12 @@
 			</FileConfiguration>
 		</File>
 		<File
-			RelativePath=".\License.rtf"
+			RelativePath="..\..\resources\License.rtf"
 			>
 		</File>
 		<File
-			RelativePath=".\ReadMe.rtf"
+			RelativePath="..\..\resources\ReadMe.rtf"
 			>
-			<FileConfiguration
-				Name="Release|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCustomBuildTool"
-				/>
-			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="..\ReleaseNotes.html"
