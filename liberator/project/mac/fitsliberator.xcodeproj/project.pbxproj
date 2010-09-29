@@ -14,7 +14,7 @@
 				757D1C8E124A3116009C3C21 /* ShellScript */,
 			);
 			dependencies = (
-				75E9B11F1250F1E8003CD87A /* PBXTargetDependency */,
+				7528F8881253713700872AE5 /* PBXTargetDependency */,
 			);
 			name = FITSLiberator3.dmg;
 			productName = FITSLiberator3.dmg;
@@ -233,19 +233,19 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
+		7528F8871253713700872AE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */;
+			remoteInfo = "FITS Liberator.mpkg";
+		};
 		75E9B0E21250EF8F003CD87A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8D01CCC60486CAD60068D4B7;
 			remoteInfo = FitsLiberator;
-		};
-		75E9B11E1250F1E8003CD87A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 75E9B0BF1250EAED003CD87A;
-			remoteInfo = "FITS Liberator.mpkg";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -2257,7 +2257,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -ex\n\n[ \"$BUILD_VARIANTS\" = \"normal\" ] || exit 0\n\nASSETS=\"$SRCROOT/../../installer/\"\nDOCS=\"$SRCROOT/../../documentation/\"\n\ndmg=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\";\ndmg_template=\"$ASSETS/mac/FITSLiberatorTemplate.dmg\";\ndmg_path=\"/Volumes/FITS Liberator 3\"\n\n\n#\n# Clean DMG\n#\nif [ $ACTION == \"clean\" ]; then\n\trm -f $dmg;\n\texit;\nfi\n\n#\n# Build DMG\n#\nif [ $ACTION == \"build\" ]; then\n\t# Remove previous image\n\trm -f $dmg $dmg-converted.dmg;\t\n\n\t# Make copy of template\n\tditto $dmg_template $dmg;\n\t\n\t# Mount\n\tdevice=$(hdiutil attach -readwrite -noverify -noautoopen \"$dmg\" | egrep '^/dev/' | sed 1q | awk '{print $1}');\n\tsleep 5;\n\n\t# Copy files\n\tditto \"$SRCROOT/../../binaries/FITS Liberator.mpkg\" \"$dmg_path/FITS Liberator.mpkg\"\n\tditto $DOCS/License.rtf \"$dmg_path/\"\n\tditto $ASSETS/mac/background.png \"$dmg_path/.background/\"\n\tditto $DOCS/ReleaseNotes.html \"$dmg_path/\"\n\tditto $DOCS/UserGuide.pdf \"$dmg_path/\"\n\n\t# Unmount\t\n\thdiutil detach $device;\n\n\t# Convert\n\thdiutil convert \"$dmg\" -format UDZO -imagekey zlib-level=9 -o \"$dmg-converted.dmg\"\n\thdiutil internet-enable -yes \"$dmg-converted.dmg\"\n\t\n\tmv \"$dmg-converted.dmg\" $SRCROOT/../../binaries/$PRODUCT_NAME\n\texit;\nfi\n\n\nexit\ndir=\"$TEMP_FILES_DIR/disk\"\ndmg=\"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.dmg\"\n\nrm -rf \"$dir\"\nmkdir \"$dir\"\ncp -R \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.saver\" \"$dir\"\nrm -f \"$dmg\"\nhdiutil create -srcfolder \"$dir\" -volname \"$PROJECT_NAME\" \"$dmg\"\nhdiutil internet-enable -yes \"$dmg\"\nrm -rf \"$dir\"\n";
+			shellScript = "set -ex\n\n[ \"$BUILD_VARIANTS\" = \"normal\" ] || exit 0\n\nASSETS=\"$SRCROOT/../../installer/\"\nDOCS=\"$SRCROOT/../../documentation/\"\n\ndmg=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\";\ndmg_template=\"$ASSETS/mac/FITSLiberatorTemplate.dmg\";\ndmg_path=\"/Volumes/FITS Liberator 3\"\n\n\n#\n# Clean DMG\n#\nif [ $ACTION == \"clean\" ]; then\n\trm -f $dmg;\n\texit;\nfi\n\n#\n# Build DMG\n#\nif [ $ACTION == \"build\" ]; then\n\t# Remove previous image\n\trm -f $dmg $dmg-converted.dmg;\n\n\t# Make copy of template\n\tditto $dmg_template $dmg;\n\t\n\t# Mount\n\tdevice=$(hdiutil attach -readwrite -noverify -noautoopen \"$dmg\" | egrep '^/dev/' | sed 1q | awk '{print $1}');\n\tsleep 5;\n\n\t# Copy files\n\tditto \"$SRCROOT/../../binaries/FITS Liberator.mpkg\" \"$dmg_path/FITS Liberator.mpkg\"\n\tditto $DOCS/License.rtf \"$dmg_path/\"\n\tditto $ASSETS/mac/background.png \"$dmg_path/.background/\"\n\tditto $DOCS/ReleaseNotes.html \"$dmg_path/\"\n\tditto $DOCS/UserGuide.pdf \"$dmg_path/\"\n\n\t# Unmount\t\n\thdiutil detach $device;\n\n\t# Convert\n\thdiutil convert \"$dmg\" -format UDZO -imagekey zlib-level=9 -o \"$dmg-converted.dmg\"\n\thdiutil internet-enable -yes \"$dmg-converted.dmg\"\n\t\n\tmv \"$dmg-converted.dmg\" $SRCROOT/../../binaries/$PRODUCT_NAME\n\texit;\nfi\n\n\nexit\ndir=\"$TEMP_FILES_DIR/disk\"\ndmg=\"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.dmg\"\n\nrm -rf \"$dir\"\nmkdir \"$dir\"\ncp -R \"$BUILT_PRODUCTS_DIR/$PROJECT_NAME.saver\" \"$dir\"\nrm -f \"$dmg\"\nhdiutil create -srcfolder \"$dir\" -volname \"$PROJECT_NAME\" \"$dmg\"\nhdiutil internet-enable -yes \"$dmg\"\nrm -rf \"$dir\"\n";
 		};
 		75E9B0BE1250EAED003CD87A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2265,12 +2265,18 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/../../../tbb/binaries/libtbbmalloc.dylib",
+				"$(SRCROOT)/../../../tbb/binaries/libtbb.dylib",
+				"$BUILT_PRODUCTS_DIR/FITS Liberator.app",
+				"$(SRCROOT)/../../installer/mac/FITS Liberator.pmdoc",
 			);
 			outputPaths = (
+				$BUILT_PRODUCTS_DIR/$PRODUCT_NAME,
+				$SRCROOT/../../binaries/$PRODUCT_NAME,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -ex\n\n[ \"$BUILD_VARIANTS\" = \"normal\" ] || exit 0\n\nASSETS=\"$SRCROOT/../../installer/mac/\"\n\nmpkg=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\";\n\n#\n# Clean DMG\n#\nif [ $ACTION == \"clean\" ]; then\n\trm -Rf $mpkg;\n\texit;\nfi\n\n#\n# Build DMG\n#\nif [ $ACTION == \"build\" ]; then\n\t# Remove previous image\n\trm -Rf $mpkg;\t\n\n\t\n\n\t# Build meta package\n\tcd $ASSETS;\n\t/Developer/usr/bin/packagemaker --doc \"FITS Liberator.pmdoc\" -o \"$mpkg\"\n\t\n\t# Move to binaries\n\tcd $SRCROOT/../../binaries/;\n\trm -Rf \"$PRODUCT_NAME\"\n\tmv \"$mpkg\" .\n\n\texit;\nfi";
+			shellScript = "set -ex\n\n[ \"$BUILD_VARIANTS\" = \"normal\" ] || exit 0\n\nASSETS=\"$SRCROOT/../../installer/mac/\"\n\nmpkg=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\";\n\n#\n# Build package\n#\nif [ $ACTION == \"build\" ]; then\n\t# Remove previous image\n\trm -Rf $mpkg;\t\n\n\t# Build meta package\n\tcd $ASSETS;\n\t/Developer/usr/bin/packagemaker --doc \"FITS Liberator.pmdoc\" -o \"$mpkg\"\n\t\n\t# Move to binaries\n\tcd $SRCROOT/../../binaries/;\n\trm -Rf \"$PRODUCT_NAME\"\n\tmv \"$mpkg\" .\n\n\texit;\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2438,15 +2444,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7528F8881253713700872AE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */;
+			targetProxy = 7528F8871253713700872AE5 /* PBXContainerItemProxy */;
+		};
 		75E9B0E31250EF8F003CD87A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8D01CCC60486CAD60068D4B7 /* FitsLiberator */;
 			targetProxy = 75E9B0E21250EF8F003CD87A /* PBXContainerItemProxy */;
-		};
-		75E9B11F1250F1E8003CD87A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */;
-			targetProxy = 75E9B11E1250F1E8003CD87A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
