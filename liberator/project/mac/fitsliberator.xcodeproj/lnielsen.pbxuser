@@ -3,7 +3,7 @@
 	089C1669FE841209C02AAC07 /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = 7515D44A1243441900937482 /* FITS Liberator */;
-		activeTarget = 8D01CCC60486CAD60068D4B7 /* FitsLiberator */;
+		activeTarget = 757D1C8F124A3116009C3C21 /* FITSLiberator3.dmg */;
 		addToTargets = (
 			8D01CCC60486CAD60068D4B7 /* FitsLiberator */,
 		);
@@ -175,6 +175,14 @@
 		perUserProjectItems = {
 			7528F84112535AC800872AE5 /* PBXTextBookmark */ = 7528F84112535AC800872AE5 /* PBXTextBookmark */;
 			7528F85112535BB000872AE5 /* PBXTextBookmark */ = 7528F85112535BB000872AE5 /* PBXTextBookmark */;
+			7528F85912536CE900872AE5 /* PBXTextBookmark */ = 7528F85912536CE900872AE5 /* PBXTextBookmark */;
+			7528F85C12536D1C00872AE5 /* PBXTextBookmark */ = 7528F85C12536D1C00872AE5 /* PBXTextBookmark */;
+			7528F86312536D4000872AE5 /* PBXTextBookmark */ = 7528F86312536D4000872AE5 /* PBXTextBookmark */;
+			7528F87212536E6F00872AE5 /* PBXTextBookmark */ = 7528F87212536E6F00872AE5 /* PBXTextBookmark */;
+			7528F87812536F4E00872AE5 /* PBXTextBookmark */ = 7528F87812536F4E00872AE5 /* PBXTextBookmark */;
+			7528F8811253702400872AE5 /* PBXTextBookmark */ = 7528F8811253702400872AE5 /* PBXTextBookmark */;
+			7528F8861253708A00872AE5 /* PBXTextBookmark */ = 7528F8861253708A00872AE5 /* PBXTextBookmark */;
+			7528F88B1253714C00872AE5 /* PBXTextBookmark */ = 7528F88B1253714C00872AE5 /* PBXTextBookmark */;
 			7541A77B125070BA0014C836 = 7541A77B125070BA0014C836 /* PBXTextBookmark */;
 			7541A783125070BA0014C836 = 7541A783125070BA0014C836 /* PBXTextBookmark */;
 			7541A784125070BA0014C836 = 7541A784125070BA0014C836 /* PBXTextBookmark */;
@@ -666,6 +674,86 @@
 		rType = 0;
 		vrLen = 1302;
 		vrLoc = 6773;
+	};
+	7528F85912536CE900872AE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 190";
+		rLen = 0;
+		rLoc = 6959;
+		rType = 0;
+		vrLen = 1888;
+		vrLoc = 3347;
+	};
+	7528F85C12536D1C00872AE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 190";
+		rLen = 0;
+		rLoc = 6959;
+		rType = 0;
+		vrLen = 1888;
+		vrLoc = 3347;
+	};
+	7528F86312536D4000872AE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 190";
+		rLen = 0;
+		rLoc = 6959;
+		rType = 0;
+		vrLen = 1761;
+		vrLoc = 3347;
+	};
+	7528F87212536E6F00872AE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 190";
+		rLen = 0;
+		rLoc = 6959;
+		rType = 0;
+		vrLen = 1888;
+		vrLoc = 3347;
+	};
+	7528F87812536F4E00872AE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 190";
+		rLen = 0;
+		rLoc = 6959;
+		rType = 0;
+		vrLen = 1888;
+		vrLoc = 3347;
+	};
+	7528F8811253702400872AE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 93";
+		rLen = 1342;
+		rLoc = 3608;
+		rType = 0;
+		vrLen = 2030;
+		vrLoc = 4209;
+	};
+	7528F8861253708A00872AE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 93";
+		rLen = 1342;
+		rLoc = 3608;
+		rType = 0;
+		vrLen = 2030;
+		vrLoc = 4209;
+	};
+	7528F88B1253714C00872AE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 75838FAC123F5D4C0036DE03 /* NavDialog.cpp */;
+		name = "NavDialog.cpp: 93";
+		rLen = 1342;
+		rLoc = 3608;
+		rType = 0;
+		vrLen = 2030;
+		vrLoc = 4209;
 	};
 	75315E610CA2E13900D04E91 /* Version.h */ = {
 		uiCtxt = {
@@ -1427,9 +1515,9 @@
 	};
 	75838FAC123F5D4C0036DE03 /* NavDialog.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1447, 3302}}";
-			sepNavSelRange = "{7272, 0}";
-			sepNavVisRange = "{6773, 1302}";
+			sepNavIntBoundsRect = "{{0, 0}, {1447, 3341}}";
+			sepNavSelRange = "{3608, 1342}";
+			sepNavVisRange = "{4209, 2030}";
 		};
 	};
 	758393911240B8EF0036DE03 /* FitsMacUI.h */ = {

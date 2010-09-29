@@ -270,13 +270,14 @@
 								<string>7534A4DE0CA9527B00FD9782</string>
 								<string>19C28FB4FE9D528D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>7528F83E12535AC100872AE5</string>
 								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>52</integer>
+									<integer>54</integer>
 									<integer>51</integer>
 								</array>
 							</array>
@@ -328,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>7528F85112535BB000872AE5</string>
+										<string>7528F88B1253714C00872AE5</string>
 										<key>history</key>
 										<array>
 											<string>75EF5B58124A6623005D4283</string>
@@ -605,6 +606,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>7528F86C12536D4000872AE5</string>
+		<string>7528F86D12536D4000872AE5</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>7587B77B123919990069B8E1</string>
 		<string>/Users/lnielsen/Workspaces/fitsliberator/liberator/project/mac/fitsliberator.xcodeproj</string>
 	</array>
@@ -647,6 +652,8 @@
 							<string>486pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -699,7 +706,7 @@
 			<key>WindowToolGUID</key>
 			<string>7587B77B123919990069B8E1</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -810,13 +817,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>75E9B0561250A0E5003CD87A</string>
+				<string>7528F86412536D4000872AE5</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>75E9B0571250A0E5003CD87A</string>
-				<string>75E9B0581250A0E5003CD87A</string>
-				<string>75E9B0591250A0E5003CD87A</string>
-				<string>75E9B05A1250A0E5003CD87A</string>
-				<string>75E9B05B1250A0E5003CD87A</string>
+				<string>7528F86512536D4000872AE5</string>
+				<string>7528F86612536D4000872AE5</string>
+				<string>7528F86712536D4000872AE5</string>
+				<string>7528F86812536D4000872AE5</string>
+				<string>7528F86912536D4000872AE5</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -972,7 +979,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>75E9B177125130F5003CD87A</string>
+				<string>7528F86A12536D4000872AE5</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
