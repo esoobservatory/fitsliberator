@@ -73,11 +73,11 @@
 			</FileConfiguration>
 		</File>
 		<File
-			RelativePath="..\..\resources\License.rtf"
+			RelativePath="..\..\documentation\License.rtf"
 			>
 		</File>
 		<File
-			RelativePath="..\..\resources\ReadMe.rtf"
+			RelativePath="..\..\documentation\ReadMe.rtf"
 			>
 		</File>
 		<File
