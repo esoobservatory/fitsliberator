@@ -249,19 +249,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		75E1D5530CB2336800268C81 /* Copy Plug-In */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = ../../../../binaries;
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			name = "Copy Plug-In";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		08EA7FFBFE8413EDC02AAC07 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		272E98B50FDFF590007F886E /* libtbb.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtbb.dylib; path = ../../../tbb/binaries/libtbb.dylib; sourceTree = SOURCE_ROOT; };
@@ -2185,7 +2172,6 @@
 				8D01CCC90486CAD60068D4B7 /* Resources */,
 				8D01CCCB0486CAD60068D4B7 /* Sources */,
 				8D01CCCD0486CAD60068D4B7 /* Frameworks */,
-				75E1D5530CB2336800268C81 /* Copy Plug-In */,
 			);
 			buildRules = (
 				46645D750DEDBE3900110D25 /* PBXBuildRule */,
@@ -2216,7 +2202,6 @@
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* SimpleFormat */;
 			projectDirPath = "";
-			projectRoot = ../..;
 			targets = (
 				8D01CCC60486CAD60068D4B7 /* FitsLiberator */,
 				75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */,
@@ -2505,6 +2490,8 @@
 					"/usr/lib/gcc/i686-apple-darwin9/4.2.1/include",
 					"/usr/lib/gcc/powerpc-apple-darwin9/4.2.1/include",
 				);
+				INSTALL_GROUP = admin;
+				INSTALL_MODE_FLAG = "u+rw,g+rw,a+rX";
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2523,6 +2510,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../../../boost/binaries\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_4 = "\"$(SRCROOT)/../../../tbb/binaries\"";
 				MACH_O_TYPE = mh_execute;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				ONLY_ACTIVE_ARCH = NO;
 				PLUGIN_TYPE = 8BIF;
 				WRAPPER_EXTENSION = app;
@@ -2683,6 +2671,8 @@
 					"/usr/lib/gcc/i686-apple-darwin9/4.2.1/include",
 					"/usr/lib/gcc/powerpc-apple-darwin9/4.2.1/include",
 				);
+				INSTALL_GROUP = admin;
+				INSTALL_MODE_FLAG = "u+rw,g+rw,a+rX";
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
