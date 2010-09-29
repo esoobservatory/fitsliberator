@@ -104,6 +104,8 @@ namespace FitsLiberator {
 			
 			/**	See http://developer.apple.com/legacy/mac/library/#documentation/Carbon/Conceptual/ProvidingNavigationDialogs/nsx_intro/nsx_intro.html for more information. */
 			static void callback( NavEventCallbackMessage callBackSelector, NavCBRecPtr callBackParms, void* callBackUserData );
+			/**	@brief	Given a file, determine if we can open it.  */
+			static Boolean callbackOpenFilter( AEDesc * theItem, void * info, void * callBackUD, NavFilterModes filterMode);
 		};
 								 
 	} // namespace Mac end

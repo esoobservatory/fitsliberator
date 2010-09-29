@@ -59,6 +59,10 @@ static const char* const OPEN_EXTENSIONS[] = {
 	"FITS", "FIT", "FTS", "IMG", "LBL",
 };
 
+static const CFStringRef OPEN_EXTENSIONS_CF[] = {
+	CFSTR("FITS"), CFSTR("FIT"), CFSTR("FTS"), CFSTR("IMG"), CFSTR("LBL"),
+};
+
 static const char* const SAVE_EXTENSIONS[] = {
 	"TIFF", "TIF"
 };
@@ -67,12 +71,12 @@ bool NavDialog::showOpenDialog() {
 	NavDialogCreationOptions options;
 
 	if(noErr == NavGetDefaultDialogCreationOptions(&options)) {
-		if(noErr == NavCreateChooseFileDialog(&options, NULL, &NavDialog::callback, NULL, NULL, this, &dialog)) {
+		if(noErr == NavCreateChooseFileDialog(&options, NULL, &NavDialog::callback, NULL, &NavDialog::callbackOpenFilter, this, &dialog)) {
 			callBack = NULL;
 			result   = kNavUserActionNone;
 			path.clear();
 			
-			createFilter(OPEN_EXTENSIONS, sizeof(OPEN_EXTENSIONS)/sizeof(OPEN_EXTENSIONS[0]));
+			//createFilter(OPEN_EXTENSIONS, sizeof(OPEN_EXTENSIONS)/sizeof(OPEN_EXTENSIONS[0]));
 			NavDialogRun(dialog);
 			return result == kNavUserActionChoose;
 		}
@@ -89,12 +93,12 @@ void NavDialog::showOpenSheet(WindowRef parentWindow, NavDialog::CallBack callBa
 		options.parentWindow = parentWindow;
 		options.modality     = kWindowModalityWindowModal;	// Display the dialog as a sheet
 		
-		if(noErr == NavCreateChooseFileDialog(&options, NULL, &NavDialog::callback, NULL, NULL, this, &dialog)) {
+		if(noErr == NavCreateChooseFileDialog(&options, NULL, &NavDialog::callback, NULL, &NavDialog::callbackOpenFilter, this, &dialog)) {
 			this->callBack = callBack;
 			this->userData = userData;
 			path.clear();
 			
-			createFilter(OPEN_EXTENSIONS, sizeof(OPEN_EXTENSIONS)/sizeof(OPEN_EXTENSIONS[0]));
+			//createFilter(OPEN_EXTENSIONS, sizeof(OPEN_EXTENSIONS)/sizeof(OPEN_EXTENSIONS[0]));
 			NavDialogRun(dialog);
 		}
 	}
@@ -132,7 +136,9 @@ void NavDialog::createFilter(const char* const extensions[], size_t count) {
     identifiers = CFArrayCreateMutable( kCFAllocatorDefault, 0, &kCFTypeArrayCallBacks );
 	for(size_t i = 0; i < count; ++i) {
 		CFStringRef extension = CFStringCreateWithCString(kCFAllocatorDefault, extensions[i], kCFStringEncodingMacRoman);
-		filter[i] = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, extension, kUTTypeData);
+		// kUTTypeData/kUTTypeText/PlainText doesn't work to filter FITS file in text format, thus open dialogs
+		// must use the NavDialog::callbackOpenFilter to filter results instead of NavDialogSetFilterTypeIdentifiers.
+		filter[i] = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, extension, kUTTypeData  );
 		CFArrayAppendValue(identifiers, filter[i]);
 		CFRelease(extension);
 	}
@@ -182,6 +188,42 @@ void NavDialog::callback(NavEventCallbackMessage callBackSelector, NavCBRecPtr c
 		break;
 	}
 }
+
+Boolean NavDialog::callbackOpenFilter( AEDesc *item, void *info, void *callBackUD, NavFilterModes filterMode) {
+	FSRef ref;
+	Boolean res = false;
+	
+	switch ( item->descriptorType ) {
+		case typeFSRef:
+			NavFileOrFolderInfo* objinfo = reinterpret_cast<NavFileOrFolderInfo *> (info);
+			if (!objinfo->isFolder) {
+
+				AECoerceDesc( item, typeFSRef, item );
+				if( noErr == AEGetDescData(item, &ref, sizeof(FSRef)) ) {
+					CFURLRef tempURL = ::CFURLCreateFromFSRef( NULL, &ref );
+					CFStringRef pathExt = ::CFURLCopyPathExtension( tempURL );
+					
+					if (pathExt != NULL) {
+						size_t count = sizeof(OPEN_EXTENSIONS_CF)/sizeof(OPEN_EXTENSIONS_CF[0]);
+						for(size_t i = 0; i < count; ++i) {
+							if( kCFCompareEqualTo == CFStringCompare( pathExt, OPEN_EXTENSIONS_CF[i], kCFCompareCaseInsensitive ) ) {
+								res = true;
+								break;
+							}
+						}
+					}
+					
+					//::CFRelease( pathExt ); - crashes for some reason if pathExt is being released here.
+					::CFRelease( tempURL );
+				}
+				
+			} 
+			break;
+	}
+	
+	return res;
+}
+
 
 void NavDialog::appendSelection(AEDesc* selection) {
 	FSRef   ref;
