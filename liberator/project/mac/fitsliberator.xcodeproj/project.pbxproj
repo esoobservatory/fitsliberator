@@ -237,14 +237,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D01CCC60486CAD60068D4B7 /* FitsLiberator */;
+			remoteGlobalIDString = 8D01CCC60486CAD60068D4B7;
 			remoteInfo = FitsLiberator;
 		};
 		75E9B11E1250F1E8003CD87A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */;
+			remoteGlobalIDString = 75E9B0BF1250EAED003CD87A;
 			remoteInfo = "FITS Liberator.mpkg";
 		};
 /* End PBXContainerItemProxy section */
@@ -2202,6 +2202,7 @@
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* SimpleFormat */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8D01CCC60486CAD60068D4B7 /* FitsLiberator */,
 				75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */,
@@ -2490,7 +2491,7 @@
 					"/usr/lib/gcc/i686-apple-darwin9/4.2.1/include",
 					"/usr/lib/gcc/powerpc-apple-darwin9/4.2.1/include",
 				);
-				INSTALL_GROUP = admin;
+				INSTALL_GROUP = "$(GROUP)";
 				INSTALL_MODE_FLAG = "u+rw,g+rw,a+rX";
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -2691,6 +2692,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../../../boost/binaries\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_4 = "\"$(SRCROOT)/../../../tbb/binaries\"";
 				MACH_O_TYPE = mh_execute;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				ONLY_ACTIVE_ARCH = NO;
 				PLUGIN_TYPE = 8BIF;
 				STRIP_STYLE = all;
