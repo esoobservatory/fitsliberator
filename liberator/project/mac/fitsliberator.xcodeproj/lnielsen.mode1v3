@@ -278,14 +278,12 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>56</integer>
-									<integer>48</integer>
-									<integer>47</integer>
-									<integer>0</integer>
+									<integer>82</integer>
+									<integer>80</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {389, 1000}}</string>
+							<string>{{0, 564}, {389, 1000}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -304,7 +302,7 @@
 							<real>389</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>0 119 1919 1059 0 0 1920 1178 </string>
+						<string>0 116 1919 1059 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -332,7 +330,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>75E3A72E12549F14001A183A</string>
+										<string>75E3A74C12549F87001A183A</string>
 										<key>history</key>
 										<array>
 											<string>75EF5B58124A6623005D4283</string>
@@ -425,7 +423,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1508, 697}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 119 1919 1059 0 0 1920 1178 </string>
+								<string>0 116 1919 1059 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -445,7 +443,7 @@
 								<key>Frame</key>
 								<string>{{0, 702}, {1508, 316}}</string>
 								<key>RubberWindowFrame</key>
-								<string>0 119 1919 1059 0 0 1920 1178 </string>
+								<string>0 116 1919 1059 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -609,11 +607,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>7587B77B123919990069B8E1</string>
 		<string>/Users/lnielsen/Workspaces/fitsliberator/liberator/project/mac/fitsliberator.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>0 119 1919 1059 0 0 1920 1178 </string>
+	<string>0 116 1919 1059 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -814,13 +813,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>7528F86412536D4000872AE5</string>
+				<string>75E3A74412549F3F001A183A</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>7528F86512536D4000872AE5</string>
-				<string>7528F86612536D4000872AE5</string>
-				<string>7528F86712536D4000872AE5</string>
-				<string>7528F86812536D4000872AE5</string>
-				<string>7528F86912536D4000872AE5</string>
+				<string>75E3A74512549F3F001A183A</string>
+				<string>75E3A74612549F3F001A183A</string>
+				<string>75E3A74712549F3F001A183A</string>
+				<string>75E3A74812549F3F001A183A</string>
+				<string>75E3A74912549F3F001A183A</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
