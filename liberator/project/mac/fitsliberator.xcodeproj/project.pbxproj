@@ -237,7 +237,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 75E9B0BF1250EAED003CD87A /* FITS Liberator.mpkg */;
+			remoteGlobalIDString = 75E9B0BF1250EAED003CD87A;
 			remoteInfo = "FITS Liberator.mpkg";
 		};
 		75E9B0E21250EF8F003CD87A /* PBXContainerItemProxy */ = {
