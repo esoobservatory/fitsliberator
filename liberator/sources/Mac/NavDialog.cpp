@@ -197,7 +197,6 @@ Boolean NavDialog::callbackOpenFilter( AEDesc *item, void *info, void *callBackU
 		case typeFSRef:
 			NavFileOrFolderInfo* objinfo = reinterpret_cast<NavFileOrFolderInfo *> (info);
 			if (!objinfo->isFolder) {
-
 				AECoerceDesc( item, typeFSRef, item );
 				if( noErr == AEGetDescData(item, &ref, sizeof(FSRef)) ) {
 					CFURLRef tempURL = ::CFURLCreateFromFSRef( NULL, &ref );
@@ -217,7 +216,9 @@ Boolean NavDialog::callbackOpenFilter( AEDesc *item, void *info, void *callBackU
 					::CFRelease( tempURL );
 				}
 				
-			} 
+			} else {
+				res = true;
+			}
 			break;
 	}
 	
