@@ -719,7 +719,7 @@ Void FlowController::setPeakLevel_( Double d )
 				rollBackState();
 				return;
 			}
-			const Plane& plane = planeModel.getPlane();
+			/*const Plane& plane = planeModel.getPlane();
 			//get the FitsImage
 			const ImageCube* cube = (*imageReader)[plane.imageIndex];
 			//generate preview
@@ -728,7 +728,7 @@ Void FlowController::setPeakLevel_( Double d )
 
 			//the tilecontrol does not retile if the tiling is unchanged by this call
 			tileControl.reTile( cube, TileControl::tileSizeSmall, planeModel.getPlane() );				
-			
+			*/
 		}
 		else
 		{
@@ -745,7 +745,8 @@ Void FlowController::setRescaleFactor( Double d )
 {
 	if ( Begin() )
 	{
-		boost::thread worker(boost::bind(&FlowController::setRescaleFactor_, this, d));
+		//do the tough stuff in a separate thread
+		boost::thread worker(boost::bind(&FlowController::setRescaleFactor_, this, d));			
 	}
 }
 
@@ -771,22 +772,15 @@ Void FlowController::setRescaleFactor_( Double d )
 			{
 				rollBackState();
 				return;
-			}
-			
-			const Plane& plane = planeModel.getPlane();
-			//get the image
-			const ImageCube* cube = (*imageReader)[plane.imageIndex];			
-			//generate preview
-			makePreview( cube );
-			tileControl.reTile( cube, TileControl::tileSizeSmall, planeModel.getPlane() );
-			
+			}			
 		}
 		else
-		{
+		{			
 			this->stretchModel.setRescaleFactor( oldVal );
 			this->stretchModel.setScale( oldVal / ( peak - bg ) );					
 		}			
 	}
+	
 	End();
 }
 
@@ -1466,10 +1460,16 @@ Void FlowController::makePreview( const ImageCube* cube )
 					if ( !( tile->isAllocated() ) )
 					{
 						//allocate and load from disk
-						tile->allocatePixels( cube->SizeOf(1,1) );
+						if ( tile->allocatePixels( cube->SizeOf(1,1) ) == ImageTile::AllocOk )
+						{
 						
-						cube->Read( plane.planeIndex, tile->getBounds(), 
-							tile->rawPixels, tile->nullPixels );
+							cube->Read( plane.planeIndex, tile->getBounds(), 
+								tile->rawPixels, tile->nullPixels );
+						}
+						else
+						{
+							break;
+						}
 					}
 					tileControl.stretchTile_par( *tile, stretch, cube );
 					previewController.zoomTile( *tile, planeModel.getFlipped().flipped );
@@ -1824,7 +1824,7 @@ Bool FlowController::Begin() {
 	{	
 		SendNotifications();
 		progressModel.Begin();		
-		SendNotifications();
+		SendNotifications();	
 		return true;
 	}
 	return false;

@@ -804,6 +804,7 @@ Void PreviewController::scaleDynamicRange(  Double bLevel, Double wLevel )
 		Byte blackVal				= 255;
 		Byte whiteVal				= 255;
 		
+
 		makeBorder( previewModel.getImageArea(), bLevel );
 
 		if (previewSegment.left >= 0 && previewSegment.top >= 0 &&

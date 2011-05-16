@@ -188,7 +188,7 @@ Void WindowsStretchView::OnNumericEnter( UInt command ) {
         case IDC_STRETCH_RESCALE:
 			if ( reScale.getValue() != model.getRescaleFactor() )
 			{
-                onScale( reScale.getValue() );
+                onScale( reScale.getValue() );				
 			}
             break;
         case IDC_STRETCH_MAXRANGE:
