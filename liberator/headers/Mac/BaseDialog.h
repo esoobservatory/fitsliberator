@@ -1,0 +1,118 @@
+// The ESA/ESO/NASA FITS Liberator - http://code.google.com/p/fitsliberator
+//
+// Copyright (c) 2004-2010, ESA/ESO/NASA.
+// All rights reserved.
+// 
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+// 
+//     * Redistributions of source code must retain the above copyright
+//       notice, this list of conditions and the following disclaimer.
+//     * Redistributions in binary form must reproduce the above copyright
+//       notice, this list of conditions and the following disclaimer in the
+//       documentation and/or other materials provided with the distribution.
+//     * Neither the names of the European Space Agency (ESA), the European 
+//       Southern Observatory (ESO) and the National Aeronautics and Space 
+//       Administration (NASA) nor the names of its contributors may be used to
+//       endorse or promote products derived from this software without specific
+//       prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+// ARE DISCLAIMED. IN NO EVENT SHALL ESA/ESO/NASA BE LIABLE FOR ANY DIRECT, 
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+// (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+// LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+// ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+// SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+// =============================================================================
+//
+// The ESA/ESO/NASA FITS Liberator uses NASA's CFITSIO library, libtiff, 
+// TinyXML, Boost C++ Libraries, Object Access Library and Intel Threading 
+// Building Blocks.
+//
+// =============================================================================
+//
+// Project Executive:
+//   Lars Lindberg Christensen
+//
+// Technical Project Manager:
+//   Lars Holm Nielsen
+//
+// Developers:
+//   Kaspar Kirstein Nielsen & Teis Johansen
+// 
+// Technical, scientific support and testing: 
+//   Robert Hurt
+//   Davide De Martin
+//
+// =============================================================================
+ 
+#ifndef __BASEDIALOG_H__
+#define __BASEDIALOG_H__
+ 
+#include "Types.h"
+#include "BundleFactory.h"
+#include "BaseComponent.h"
+#include "BaseControl.h"
+#include "FitsMacTerminology.h"
+#include "MachOFrameworkSupport.h"
+
+#include <IBCarbonRuntime.h>
+
+namespace FitsLiberator {
+	namespace Mac {
+
+class BaseControl;
+
+typedef UInt32	FitsCursorID;
+	
+/**
+ * Base class for a nib-based window. Encapsulates functions from the 
+ * Window Manager and the Control Manager releated to windows.
+ */		
+class BaseDialog : public BaseComponent {
+	public:
+		BaseDialog();
+
+		virtual EventHandlerRef	installEventHandler( const EventTypeSpec * inList, UInt32 inNumTypes, EventHandler *handler );
+		virtual Void 		    runModalEventLoop();
+		virtual Void 		    quitModalEventLoop();
+			
+		virtual Void				globalToLocal( ::Point *p );
+		virtual MouseTrackingRef 	createMouseTrackingRegion( const Rect*, MouseTrackingRegionID, BaseControl* );
+		virtual Void				setCursor( FitsCursorID );
+		
+		Void 				create( BundleFactory* bundleFactory, CFStringRef nibFileName, CFStringRef windowName );
+		Void 				dispose();
+		Void 				show();
+		Void 				hide();
+		Void				select();
+		Void 				getControlByID( ControlID *ctrlID, ControlRef *ctrlRef );
+		Void 				getControlByID( Int id, ControlRef *ctrlRef );
+		ControlRef			getControlByID( Int id );
+		CGrafPtr 			getWindowPort();
+		Void 				setAlpha( Float alpha );
+		Void				getAlpha( Float *alpha );
+		Void 				getBounds( Rect *globalBounds );
+		Void 				setTitle( CFStringRef title );
+		Void 				getTitle( CFStringRef *title );
+		Void 				appendTitle( CFStringRef appendTitle );
+		Void 				clearKeyboardFocus();
+		Void 				drawControls();
+		Void				activate( Bool b );
+		Void				bringToFront();
+			
+		WindowRef			getWindow();
+
+				
+	protected:
+		WindowRef 		window;			///< Reference to the object's window 
+};
+		
+	} // namespace Mac end
+} // namespace FitsLiberator end
+#endif //__BASEDIALOG_H__

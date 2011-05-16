@@ -1,0 +1,4 @@
+CC	= cc
+FLAGS	= -DSUN4 -D_NO_PROTO
+LIB	= oal.a -lm
+RANLIB  = ranlib

@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Verdana;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\fi-426\li852\sa200\sl276\slmult1\tx568\tx852\lang6\b\f0\fs20 GETTING STARTED: COOKBOOK FOR PROCESSING A FITS IMAGE\par
+\b0\tab 1.\tab Set the white- and black level sliders in the histogram to give a nice contrast without too much black and too saturated areas.\par
+\tab 2.\tab Click on the \i Auto scaling\i0  button to set the background and peak levels using the white and black level sliders.\par
+\tab 3.\tab Set the Stretch Function to ArcSin(x) to bring up fainter details. If the image is too dark, increase the Scaled Peal Level to higher values (e.g. 100, 1000).\par
+\tab 4.\tab Enter relevant metadata on the \i Metadata\i0  tab. This descriptive information will be embedded in the image when you save it.\par
+\tab 5.\tab Click on the Save file or the Save & edit button to save the image into a TIFF file and optionally open the saved file in your default viewer.\par
+\b\par
+FITS LIBERATOR BASICS\par
+\b0 The FITS Liberator allows access to astronomical datasets in the FITS data format. In addition, it provides tools for managing the high dynamic range in many of these images, allowing one to display a wide range of brightness levels without losing details in either the shadows or highlights.\par
+The FITS Liberator provides a preview window showing what the saved TIFF image will look like, giving full pan and zoom capabilities. The Histogram window helps visualize data value distribution in the FITS file, and dynamically updates as the image is processed with a stretch function.\par
+For simple images with low dynamic range, images can be saved using a simple linear scale, displaying brightness in proportion to the data value. \par
+Images with large dynamic range must be mathematically processed using a stretch function to compress the highlights while bringing up details in the shadows. This is achieved in several steps. First, the level of the background is identified, and subtracted from the dataset. Second, the peak level of the brightest features of interest are identified and rescaled to a specified value. Third, a stretch function is chosen for rescaling the brightness of the image.\par
+The most common stretch function is ArcSinh(x). This is similar to a logarithm, but is well-behaved at zero. Once the ArcSinh function is selected, the level of dynamic range compression is set by adjusting the Scaled Peak Level. Larger values will bring up the brightness of the fainter features relative to the brightest features. Usually values of 10\endash 1000 are suitable. The Scaled Peak Level is also used in related compound and Log(x) functions.\par
+Root functions (square root, cube root, etc.) can also be used to compress the dynamic range of the image. These are offered as separate functions: x^(1/2), x^(1/3), etc. The amount of dynamic range compression is determined solely by the function used. The Scaled Peak Level has no effect on root functions, but it is important to set the background level correctly for these, just as for ArcSinh/Log functions.\par
+USAGE NOTE: When typing into text boxes in the FITS Liberator interface you must hit the TAB or ENTER key to update the value. In the preferences dialog you must use the TAB key.\par
+\pard\sa200\sl276\slmult1\par
+\pard\fi-426\li852\sa200\sl276\slmult1\tx568\tx852\b INTERFACE SUMMARY\par
+\b0 The FITS Liberator interface window has a series of tabs that allow access to all of the functions of the plug-in. These are divided into Processing (basic processesing functionality), Metadata (embeds descriptive information in image), FITS Header (displays header info), and Help Guide (this document). \par
+\b [PROCESSING TAB]\par
+\b0 Most of the functionality of the FITS Liberator is contained in this first tab at the top of the interface. Here you will find all the controls for adjusting the dynamic range and processing an image.\par
+\b TOOLBAR\par
+\b0 Hand Tool \endash  Pans the image in the preview window and slides the Histogram side-to-side\par
+Zoom Tool \endash  Zooms the Preview and Histogram windows. Click-and-drag to zoom to a specific area. Hold Option/Alt modifier to zoom out.\par
+Black/White Level Picker Tools \endash  Click in the preview window to set the black/white levels for the image.\par
+Background/Peak Level Sampler Tool \endash  Click in the preview to set the background/peak levels for the image (used for stretch functions).\b\par
+PREVIEW WINDOW\par
+\b0 This displays a preview of the image that is saved in a TIFF file. Zoom in/out by clicking the +/- buttons or choose a zoom level from the pop-up menu.\par
+\b HISTOGRAM WINDOW\par
+\b0 This shows a histogram of data values for the image. The histogram will update as different stretch functions are applied to the data. \par
+The black/white levels may be set by dragging the pointers under the window or by typing values into the text boxes. Clicking the up/down arrows by the text boxes will nudge the values in small increments.\par
+\b IMAGE/PLANE MENU\par
+\b0 Some FITS files can contain multiple imbedded images. Use this pop-up to select the desired one to process.\par
+\b IMAGE SIZE/DATA/STATISTICS PANELS\par
+\b0 These panels summarize basic information about the image.\par
+\b SCALING AND STRETCH PANEL\par
+\b0 This panel contains all the settings for mathematically compressing the dynamic range of an image, bringing up fainter details without blowing out the highlights.\par
+Stretch Function \endash  "Linear" is a simple unstretched image. The most common function for compressing dynamic range is "ArcSinh(x)" though the root functions like "x^(1/2)," "x^(1/3)" can be useful. Different images may work better with different functions.\par
+Background Level \endash  This defines the "zero point" of the input image. Before applying a stretch function it is important to first subtract out any residual background. The button to the right will copy the current black level setting in the histogram into this field.\par
+Peak Level \endash  This defines the brightest highlight of interest in the image. Before applying some stretch functions (ArcSinh(x), Log(x), etc.) it is important to set the level of the brightest end of the image. The button to the right will copy the current white level setting in the histogram into this field.\par
+Scaled Peak Level \endash  This adjustable parameter works with some stretch functions (ArcSinh(x), Log(x), etc.) to change the overall dynamic range of the image. Larger values will bring up fainter features.\par
+Auto Scaling \endash  This button combines severals steps into one click. It will copy the black/white levels from the Histogram window into the Background/Peak level fields, and set the Scaled Peak Level to a default value (this can be set in the Preferences).\par
+Apply levels \endash  When this button is enabled it is possible to enter the values into the Background, Peak and Scaled Peak level fields without having the FITS Liberator process the image for each individual value entered. In this way working with large, computationally intensive files is less demanding. The button is enabled through the Options dialog.\par
+\b CHANNELS PANEL\par
+\b0 This selects the bit depth of the tiff image saved. 16-bit is the default, allowing for flexible editing without loss of information. 8-bit may be desirable for very large images that require a lot of memory. Use 32-bit if you would like the saved TIFF file to be treated as an HDR image (works best if you use the "Linear" stretch function).\par
+\b UNDEFINED VALUES PANEL\par
+\b0 This defines how "undefined" values in the image will be saved in the TIFF file. If set to "Transparent" then the image will appear as a layer with transparent pixels wherever the image is undefined.\par
+\b CHECKBOXES\par
+\b0 Various behaviors can be set using the checkboxes on the right side of the interface.\par
+Preview \endash  Enables/disables the preview image.\par
+Flip Image \endash  Vertically flips the image as it is saved. The FITS Liberator will attempt to set this to the best value automatically, but the user can override the choice if desired.\par
+Freeze Settings \endash  When checked, all of the interface settings will be saved as the current image is processed and applied to subsequent images when they are opened. This is useful for applying identical stretches to a series of matching images.\par
+Mark Pixels in Preview \endash  These checkboxes toggle the color overlays that indicate pixels that are undefined or have been clipped by the black/white level settings.\par
+Show Image Information for \endash  This determines whether the image statistics are shown for the scaled (after the linear corrections for background/peak level and scale) or stretched (after the stretch function) image.\par
+\b BUTTONS\par
+\b0 Save file - Accept current settings and save the current work as a TIFF file. The FITS Liberator continues to run after the save.\par
+Save & edit \endash  Same as the Save file button, however, after the file is saved it is launched with the default TIFF viewer on the system.\par
+Options \endash  Set defaults for initial guesses for levels. \par
+Reset \endash  Resets all of the scaling/stretch values to the default values\par
+\tab Initial Guess \endash  Sets how the initial black/white levels are determined for a new image. \par
+\tab Default Stretch \endash  Sets the default stretch function and Autoscale Peak level (this number will be entered into the Scaled Peak Level field when the "Auto Scaling" button is pressed).\par
+\tab Visible Histogram Markers \endash  This determines which guidelines will be overlaid in the Histogram Window.\par
+\tab Clear History \endash  Clears the processesing record of recently-imported files (the FITS Liberator will remember recent settings so reopening the same image will default to the settings used the last time it was opened).\par
+\par
+\b [METADATA TAB]\par
+\b0 The FITS Liberator will automatically embed relevant descriptive metadata into the TIFF image as it is saved. This tab allows review and modification of all of the possible metadata fields. A standard installation of the FITS Liberator will also install the metadata panels that can be accessed  using the "File Info..." menus in Photoshop and Bridge. The metadata is stored in the TIFF file when it is saved.\par
+For more about the Astronomy Visualization Metadata (AVM) standard, refer to the website:\par
+{\field{\*\fldinst{HYPERLINK "http://www.virtualastronomy.org"}}{\fldrslt{\ul\cf1 http://www.virtualastronomy.org}}}\f0\fs20\par
+\par
+\b [FITS HEADER TAB]\par
+\b0 This tab allows you to inspect the full FITS header of the FITS file. You may copy information from here to the clipboard after selecting it.\par
+}
+ 

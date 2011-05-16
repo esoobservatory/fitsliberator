@@ -1,0 +1,7 @@
+CC	  = cc
+FLAGS     = -DSUN4
+LIB	  = oal.a -lm
+RANLIB    = ranlib
+IDL_FLAGS = -G -KPIC
+IDL_LIBS  = -lm
+IDL_LD    = -G
