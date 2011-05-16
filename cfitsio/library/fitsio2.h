@@ -3,6 +3,9 @@
  
 #include "fitsio.h"
 
+
+
+
 /*
   If REPLACE_LINKS is defined, then whenever CFITSIO fails to open
   a file with write access because it is a soft link to a file that

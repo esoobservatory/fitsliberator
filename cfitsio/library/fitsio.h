@@ -38,6 +38,12 @@ SERVICES PROVIDED HEREUNDER."
 
 #include <stdio.h>
 
+#if defined(WIN32) && (_FILE_OFFSET_BITS - 0 == 64)
+#define fseeko _fseeki64
+#define ftello _ftelli64
+#define OFF_T __int64
+#endif
+
 /* the following was provided by Michael Greason (GSFC) to fix a */
 /*  C/Fortran compatibility problem on an SGI Altix system running */
 /*  SGI ProPack 4 [this is a Novell SuSE Enterprise 9 derivative]  */
@@ -65,8 +71,10 @@ SERVICES PROVIDED HEREUNDER."
 /*  i.e, "(defined(linux) && defined(__off_t_defined))" */
 #if defined(_OFF_T) || (defined(linux) && defined(__off_t_defined)) || defined(_MIPS_SZLONG) || defined(__APPLE__) || defined(_AIX)
 #    define OFF_T off_t
-#else
+#else 
+#if !defined(OFF_T)
 #    define OFF_T long
+#endif
 #endif
 
 /* this block determines if the the string function name is 

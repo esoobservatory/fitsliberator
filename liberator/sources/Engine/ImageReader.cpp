@@ -101,8 +101,14 @@ ImageReader::FromFile(const string& filename) {
 			    return reader;
 			else
 				return 0;
-    	} catch(ImageReaderException) {}
-		catch(Exception) {}
+    	} catch(ImageReaderException)
+		{
+			return 0;
+		}
+		catch(Exception)
+		{
+			return 0;
+		}
     }
 
 	return 0;
