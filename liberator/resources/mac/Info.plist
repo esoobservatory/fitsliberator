@@ -30,7 +30,7 @@
 	<key>CFBundleIconFile</key>
 	<string>FitsLiberator</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.spacetelescope.fits_liberator</string>
+	<string>org.spacetelescope.fits_liberator.standalone</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
