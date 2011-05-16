@@ -139,8 +139,8 @@
     <Keyword Name="Spatial.Equinox" Schema="avm"
              Id="36"
              Description="Equinox for Spatial.CoordinateFrame.">
-      <Completion>J2000</Completion>
-      <Completion>B1950</Completion>
+      <Completion>2000</Completion>
+      <Completion>1950</Completion>
     </Keyword>
     <Keyword Name="Spatial.ReferenceValue" Schema="avm"
              Id="37" Type="2" Flags="8" Elements="2"
@@ -281,7 +281,7 @@
     <Transform Keyword="Temporal.StartTime" Header="DATE-OBS|DATE_OBS" 
                Match="^(\d{4})/(\d{2})/(\d{2})" Format="\1-\2-\3"/>
     <Map Keyword="Temporal.IntegrationTime" Header="EXPTIME"/>
-    <Transform Keyword="Spatial.Equinox" Header="EQUINOX" Match="^2.*" Format="J2000"/>
+    <Transform Keyword="Spatial.Equinox" Header="EQUINOX" Match="^2.*" Format="2000"/>
     <Transform Keyword="Spatial.CoordsystemProjection" Header="CTYPE1|CTYPE2" 
                Match="^.*(TAN|SIN|ARC|AIT|CAR)$" Format="\1"/>
   </Ruleset>
