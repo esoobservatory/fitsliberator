@@ -2497,8 +2497,10 @@
 					"/usr/lib/gcc/i686-apple-darwin9/4.2.1/include",
 					"/usr/lib/gcc/powerpc-apple-darwin9/4.2.1/include",
 				);
-				INSTALL_GROUP = "$(GROUP)";
+				INSTALL_GROUP = admin;
 				INSTALL_MODE_FLAG = "u+rw,g+rw,a+rX";
+				INSTALL_OWNER = root;
+				INSTALL_PATH = /Applications;
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2680,6 +2682,8 @@
 				);
 				INSTALL_GROUP = admin;
 				INSTALL_MODE_FLAG = "u+rw,g+rw,a+rX";
+				INSTALL_OWNER = root;
+				INSTALL_PATH = /Applications;
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
