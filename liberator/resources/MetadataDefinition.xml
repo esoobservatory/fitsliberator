@@ -1,0 +1,298 @@
+﻿<Metadata Version="1.1" Schema="http://www.communicatingastronomy.org/avm/1.0/" Namespace="avm">
+  <!-- Type: 
+        0 = String          1 = String-CV       2 = Real
+        3 = Date            4 = DateTime        5 = Time
+        6 = Url host        7 = Url resource
+        8 = Ivo host        9 = Ivo identifier 10 = Ivo resource -->
+  <!-- Flags: To calculate the Flags attribute simply add the flag values below.
+        1 = Readonly       // Not editable
+        2 = Required       // Must be included
+        4 = List           // Interpret the data as a list separated by ";"
+        8 = Ordered        // Interpret the data as an ordered list separated by ";"
+       16 = Hidden         // Not shown to the user, but still serialized 
+       32 = Retained       // Saved from one session to the next
+       64 = RetainedHint   // Retains the most recently used value, but doesn't fill out the field
+      128 = DontSerialize  // Dont serialize the keyword to AOI metadata
+      256 = Alt            // Store the value in an rdf:Alt element -->
+  <Schema Prefix="avm" Namespace="http://www.communicatingastronomy.org/avm/1.0/"/>
+  <Schema Prefix="Iptc4xmpCore" Namespace="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/"/>
+  <Schema Prefix="dc" Namespace="http://purl.org/dc/elements/1.1/"/>
+  <Schema Prefix="photoshop" Namespace="http://ns.adobe.com/photoshop/1.0/"/>
+  <Schema Prefix="xapRights" Namespace="http://ns.adobe.com/xap/1.0/rights/"/>
+
+  <Category Name="Content">
+    <Keyword Name="Title" Schema="dc" Path="title"
+             Id="12" Flags="128"
+             Description="General descriptive title given to the image resource."/>
+    <Keyword Name="Headline" Schema="photoshop"
+             Id="13" Flags="130"
+             Description="Short description of the full caption."/>
+    <Keyword Name="Description" Schema="dc" Path="description"
+             Id="14" Flags="128"
+             Description="Full caption and related description text for the image resource."/>
+    <Keyword Name="Subject.Category" Schema="avm"
+             Id="15" Flags="4"
+             Description="The type(s) of object or objects in the resource. If objects can be placed into multiple categories in the taxonomy they should all be listed."/>
+    <Keyword Name="Subject.Name" Schema="avm"
+             Id="16" Flags="132"
+             Description="Proper names/catalog numbers for all of the key objects in the image field."/>
+    <Keyword Name="Distance" Schema="avm"
+             Id="17" Flags="8" Elements="2"
+             Description="The distance to the object, measured in light years (list element 1) and/or redshift (list element 2)."/>
+    <Keyword Name="Distance.Notes" Schema="avm"
+             Id="18"
+             Description="Comment about the contents of the Distance tag."/>
+    <Keyword Name="ReferenceURL" Schema="avm"
+             Id="19" Type="7" Flags="64"
+             Description="Web page containing more information about this specific image."/>
+    <Keyword Name="Credit" Schema="photoshop"
+             Id="20" Flags="194"
+             Description="The minimum information that the Publisher would like to see mentioned when the resource is used."/>
+    <Keyword Name="Date" Schema="photoshop" Path="DateCreated"
+             Id="21" Type="3" Flags="194"
+             Description="Date that the resource was created or made available."/>
+    <Keyword Name="ID" Schema="avm"
+             Id="22" Flags="64"
+             Description="This is an identifier for the resource that is unique to the creator."/>
+    <Keyword Name="Type" Schema="avm"
+             Id="23" Type="1" Flags="34"
+             Description="The type of resource.">
+      <Completion>Artwork</Completion>
+      <Completion>Observation</Completion>
+      <Completion>Photograph</Completion>
+      <Completion>Simulation</Completion>
+      <Completion>Planetary</Completion>
+      <Completion>Collage</Completion>
+      <Completion>Chart</Completion>
+    </Keyword>
+    <Keyword Name="Image.ProductQuality" Schema="avm"
+             Id="24" Type="1"
+             Description="Qualitative image quality assessment.">
+      <Completion>Good</Completion>
+      <Completion>Moderate</Completion>
+      <Completion>Poor</Completion>
+    </Keyword>
+  </Category>
+  <Category Name="Observation"
+            Description="The information in this section characterizes the observational data of source datasets used to create the publication-quality image. These include the data sources (facility, instruments, etc), the geometric projection on the sky, and the wavelength/color assignments used for composite images.">
+    <Keyword Name="Facility" Schema="avm"
+             Id="25" Flags="72"
+             Description="Telescopes or observatories used for the observations."/>
+    <Keyword Name="Instrument" Schema="avm"
+             Id="26" Flags="72"
+             Description="Instrument used to collect the data."/>
+    <Keyword Name="Spectral.ColorAssignment" Schema="avm"
+             Id="27" Type="1" Flags="8"
+             Description="The output colour, which is assigned to an exposure.">
+      <Completion>Purple</Completion>
+      <Completion>Blue</Completion>
+      <Completion>Cyan</Completion>
+      <Completion>Green</Completion>
+      <Completion>Yellow</Completion>
+      <Completion>Orange</Completion>
+      <Completion>Red</Completion>
+      <Completion>Magenta</Completion>
+      <Completion>Grayscale</Completion>
+      <Completion>Pseudocolor</Completion>
+    </Keyword>
+    <Keyword Name="Spectral.Band" Schema="avm"
+             Id="28" Type="1" Flags="8"
+             Description="Waveband of the component exposure from a pre-defined list defining the general part of the spectrum covered.">
+      <Completion>Radio</Completion>
+      <Completion>Millimeter</Completion>
+      <Completion>Infrared</Completion>
+      <Completion>Optical</Completion>
+      <Completion>Ultraviolet</Completion>
+      <Completion>X-ray</Completion>
+      <Completion>Gamma-ray</Completion>
+    </Keyword>
+    <Keyword Name="Spectral.Bandpass" Schema="avm"
+             Id="29" Flags="72"
+             Description="Bandpass of the individual exposure."/>
+    <Keyword Name="Spectral.CentralWavelength" Schema="avm"
+             Id="30" Type="2" Flags="72"
+             Description="Central wavelength of the filter used for the individual exposure measured in nanometres."/>
+    <Keyword Name="Spectral.Notes" Schema="avm"
+             Id="31" Flags="320"
+             Description="Free-text field to allow for more detailed discussions of bandpasses and color mappings."/>
+    <Keyword Name="Temporal.StartTime" Schema="avm"
+             Id="32" Type="4" Flags="72"
+             Description="Start time of the exposure in ISO 8601 format."/>
+    <Keyword Name="Temporal.IntegrationTime" Schema="avm"
+             Id="33" Type="2" Flags="8"
+             Description="The exposure time the exposure in seconds."/>
+    <Keyword Name="DatasetID" Schema="avm"
+             Id="34" Type="10" Flags="72"
+             Description="VO-compliant reference to the dataset (the exposure) used to construct the final image (if available)."/>
+  </Category>
+  <Category Name="Coordinate">
+    <Keyword Name="Spatial.CoordinateFrame" Schema="avm"
+             Id="35" Type="1"
+             Description="Coordinate system reference frame.">
+      <Completion>ICRS</Completion>
+      <Completion>FK5</Completion>
+      <Completion>FK4</Completion>
+      <Completion>ECL</Completion>
+      <Completion>GAL</Completion>
+      <Completion>SGAL</Completion>
+    </Keyword>
+    <Keyword Name="Spatial.Equinox" Schema="avm"
+             Id="36"
+             Description="Equinox for Spatial.CoordinateFrame.">
+      <Completion>2000</Completion>
+      <Completion>1950</Completion>
+    </Keyword>
+    <Keyword Name="Spatial.ReferenceValue" Schema="avm"
+             Id="37" Type="2" Flags="8" Elements="2"
+             Description="Reference coordinates for the image (2 element list in decimal degrees)."/>
+    <Keyword Name="Spatial.ReferenceDimension" Schema="avm"
+             Id="38" Type="2" Flags="8" Elements="2"
+             Description="Size of the image in pixels (2 element list)."></Keyword>
+    <Keyword Name="Spatial.ReferencePixel" Schema="avm"
+             Id="39" Type="2" Flags="8" Elements="2"
+             Description="X,Y coordinates of the pixel in the image to which the reference coordinate (Spatial.ReferenceValue) refers (2 element list)."/>
+    <Keyword Name="Spatial.Scale" Schema="avm"
+             Id="40" Type="2" Flags="8" Elements="2"
+             Description="Spatial scale of the image in number of degrees/pixel (2 element list)."/>
+    <Keyword Name="Spatial.Rotation" Schema="avm"
+             Id="41" Type="2"
+             Description="Position angle of the Y axis in degrees measured east from north."/>
+    <Keyword Name="Spatial.CoordsystemProjection" Schema="avm"
+             Id="42" Type="1"
+             Description="A combination of the coordinate system and the projection of the image.">
+      <Completion>TAN</Completion>
+      <Completion>SIN</Completion>
+      <Completion>ARC</Completion>
+      <Completion>AIT</Completion>
+      <Completion>CAR</Completion>
+    </Keyword>
+    <Keyword Name="Spatial.Quality" Schema="avm"
+             Id="43" Type="1"
+             Description="This qualitatively describes the reliability of the spatial coordinate information in this metadata.">
+      <Completion>Full</Completion>
+      <Completion>Position</Completion>
+    </Keyword>
+    <Keyword Name="Spatial.Notes" Schema="avm"
+             Id="44" Flags="320"
+             Description="Free-text description to further expand upon coordinates/geometry of image."/>
+    <Keyword Name="Spatial.FITSheader" Schema="avm"
+             Id="45"
+             Description="Free-text representation of the FITS header from which the AVM spatial tags were derived."/>
+  </Category>
+  <Category Name="Publisher">
+    <Keyword Name="Publisher" Schema="avm"
+             Id="46" Flags="32"
+             Description="Publisher of the resource."/>
+    <Keyword Name="PublisherID" Schema="avm"
+             Id="47" Flags="32"
+             Description="ID of publisher registered as VAMP providers."/>
+    <Keyword Name="ResourceID" Schema="avm"
+             Id="48" Flags="66"
+             Description="This identifies a specific “instance” of a resource; e.g. one image in one file format at one resolution. This allows the same resource (image) to be offered in different formats and resolutions. Together with the PublisherID, each registered resource is uniquely identified in the database."/>
+    <Keyword Name="ResourceURL" Schema="avm"
+             Id="49" Type="7" Flags="64"
+             Description="A unique URL pointing to the specific online image/image archive is needed to identify where to obtain the image. Each ResourceID is paired with a matching ResourceURL."/>
+    <Keyword Name="RelatedResources" Schema="avm"
+             Id="50" Flags="4"
+             Description="The format is a list of PublisherID/ID values that will reference specific resources registered in VAMP (though not specific “instances”)."/>
+    <Keyword Name="MetadataDate" Schema="avm"
+             Id="51" Type="3"
+             Description="The date of the metadata content for the image."/>
+    <Keyword Name="MetadataVersion" Schema="avm"
+             Id="52" Flags="19"
+             Description="This is the version of the applied metadata definition."/>
+  </Category>
+  <Category Name="Creator" 
+            Description="These tags identify the source of the resources (usually organization, not an individual) and would likely not change much from product to product from the same content provider.">
+    <Keyword Name="Creator" Schema="photoshop" Path="Source"
+              Id="1" Flags="162" 
+             Description="Original creator of the resource at the organizational level."/>
+    <Keyword Name="CreatorURL" Schema="Iptc4xmpCore" Path="CreatorContactInfo/CiUrlWork"
+             Id="2" Type="7" Flags="172"
+             Description="A simple URL pointing to the (top level) outreach webpage for the original creator."/>
+    <Keyword Name="Contact.Name" Schema="dc" Path="creator"
+             Id="3" Flags="164"
+             Description="Name(s) of the primary contact(s) for the resource."/>
+    <Keyword Name="Contact.Email" Schema="Iptc4xmpCore" Path="CreatorContactInfo/CiEmailWork"
+             Id="4" Flags="164"
+             Description="Email(s) of the primary contact(s) for the resource."/>
+    <Keyword Name="Contact.Telephone" Schema="Iptc4xmpCore" Path="CreatorContactInfo/CiTelWork"
+             Id="5" Flags="164"
+             Description="Telephone number(s) of the primary contact for the resource."/>
+    <Keyword Name="Contact.Address" Schema="Iptc4xmpCore" Path="CreatorContactInfo/CiAdrExtadr"
+             Id="6" Flags="160"
+             Description="Street address of the primary contact for the resource."/>
+    <Keyword Name="Contact.City" Schema="Iptc4xmpCore" Path="CreatorContactInfo/CiAdrCity"
+             Id="7" Flags="160"
+             Description="City of the primary contact for the resource."/>
+    <Keyword Name="Contact.StateProvince" Schema="Iptc4xmpCore" Path="CreatorContactInfo/CiAdrRegion"
+             Id="8" Flags="160"
+             Description="State or province of the primary contact for the resource."/>
+    <Keyword Name="Contact.PostalCode" Schema="Iptc4xmpCore" Path="CreatorContactInfo/CiAdrPcode"
+             Id="9" Flags="160" Description="Zip or postal code of the primary contact for the resource."/>
+    <Keyword Name="Contact.Country" Schema="Iptc4xmpCore" Path="CreatorContactInfo/CiAdrCtry"
+             Id="10" Flags="160"
+             Description="Country of the primary contact for the resource."/>
+    <Keyword Name="Rights" Schema="xapRights" Path="UsageTerms"
+             Id="11" Flags="418"
+             Description="Copyright and related intellectual property rights description."/>
+  </Category>
+  <Category Name="Fits Liberator">
+    <Keyword Name="FL.StretchFunction" Schema="avm"
+             Type="1" Flags="25"
+             Description="Stretch function applied to the input data in the processing. One StretchFunction per exposure."/>
+    <Keyword Name="FL.BackgroundLevel" Schema="avm"
+             Type="2" Flags="25"
+             Description="Lower value of input range for the Scale function. One BackgroundLevel per exposure."/>
+    <Keyword Name="FL.PeakLevel" Schema="avm"
+             Type="2" Flags="25"
+             Description="Upper value of input range for the Scale function. One PeakLevel per exposure."/>
+    <Keyword Name="FL.ScaledBackgroundLevel" Schema="avm"
+             Type="2" Flags="25"
+             Description="The target lower value of the range of the Scaled image. One ScaledBackgroundLevel per exposure."/>
+    <Keyword Name="FL.ScaledPeakLevel" Schema="avm"
+             Type="2" Flags="25"
+             Description="The target upper value of the range of the Scaled image. One ScalePeakLevel per exposure."/>
+    <Keyword Name="FL.BlackLevel" Schema="avm"
+             Type="2" Flags="25"
+             Description="The Stretched Scaled input pixel value, which was set to define the colour black in the output image. One BlackLevel per exposure."/>
+    <Keyword Name="FL.WhiteLevel" Schema="avm"
+             Type="2" Flags="25"
+             Description="The Stretched Scaled input pixel value, which was set to define the colour white in the output image. One WhiteLevel per exposure."/>
+    <Keyword Name="FL.CreationNotes" Schema="avm"
+             Flags="320"
+             Description="Free-form notes about the image creation process."/>
+  </Category>
+
+  <Ruleset>
+    <Set Keyword="MetadataVersion" Value="1.1"/>
+    <Set Keyword="Type" Value="Observation"/>
+  </Ruleset>
+
+  <Ruleset Format="FITS">
+    <Vector Keyword="Spatial.ReferenceValue" Header="CRVAL1;CRVAL2"/>
+    <Map Keyword="Spatial.CoordinateFrame" Header="CFRAME|RADESYS|RADECSYS"/>
+    <!-- <Vector Keyword="Spatial.ReferencePixel" Header="CRPIX1;CRPIX2"/> -->
+    <!-- <Vector Keyword="Spatial.Scale" Header="CDELT1;CDELT2"/> -->
+    <!-- <Map Keyword="Spatial.Rotation" Header="CROTA2|CROTA1|CROT|CROT2|CROT1|"/> -->
+    <Vector Keyword="Spatial.ReferenceDimension" Header="NAXIS1;NAXIS2"/>
+    <Transform Keyword="Temporal.StartTime" Header="DATE-OBS|DATE_OBS" 
+               Match="^(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2}).*$" Format="\1T\2:\3"/>
+    <Transform Keyword="Temporal.StartTime" Header="DATE-OBS|DATE_OBS" 
+               Match="^(\d{4})/(\d{2})/(\d{2})" Format="\1-\2-\3"/>
+    <Map Keyword="Temporal.IntegrationTime" Header="EXPTIME"/>
+    <Transform Keyword="Spatial.Equinox" Header="EQUINOX" Match="^2.*" Format="2000"/>
+    <Transform Keyword="Spatial.CoordsystemProjection" Header="CTYPE1|CTYPE2" 
+               Match="^.*(TAN|SIN|ARC|AIT|CAR)$" Format="\1"/>
+  </Ruleset>
+  <Ruleset Format="PDS">
+    <Transform Keyword="Temporal.StartTime" Header="START_TIME" 
+               Match="^(\d{4})$" Format="\1-01-01"/>
+    <Transform Keyword="Temporal.StartTime" Header="START_TIME" 
+               Match="^(\d{4}-\d{2})$" Format="\1-01"/>
+    <Transform Keyword="Temporal.StartTime" Header="START_TIME" 
+               Match="^(\d{4}-\d{2}-\d{2})$" Format="\1"/>
+    <Transform Keyword="Temporal.StartTime" Header="START_TIME" 
+               Match="^(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2}).*$" Format="\1T\2:\3"/>
+  </Ruleset>
+</Metadata>
