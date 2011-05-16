@@ -3,7 +3,7 @@
 	089C1669FE841209C02AAC07 /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = 7515D44A1243441900937482 /* FITS Liberator */;
-		activeTarget = 757D1C8F124A3116009C3C21 /* FITSLiberator3.dmg */;
+		activeTarget = 8D01CCC60486CAD60068D4B7 /* FitsLiberator */;
 		addToTargets = (
 			8D01CCC60486CAD60068D4B7 /* FitsLiberator */,
 		);
@@ -78,7 +78,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					1269,
+					790,
 					20,
 					48,
 					43,
@@ -169,13 +169,13 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 307886133;
-			PBXWorkspaceStateSaveDate = 307886133;
+			PBXPerProjectTemplateStateSaveDate = 327228048;
+			PBXWorkspaceStateSaveDate = 327228048;
 		};
 		perUserProjectItems = {
 			7528F891125481CF00872AE5 = 7528F891125481CF00872AE5 /* PBXTextBookmark */;
 			7528F892125481CF00872AE5 = 7528F892125481CF00872AE5 /* PBXTextBookmark */;
-			75368ADF1259F83B006F7E2C /* PBXTextBookmark */ = 75368ADF1259F83B006F7E2C /* PBXTextBookmark */;
+			75368ADF1259F83B006F7E2C = 75368ADF1259F83B006F7E2C /* PBXTextBookmark */;
 			7541A77B125070BA0014C836 = 7541A77B125070BA0014C836 /* PBXTextBookmark */;
 			7541A783125070BA0014C836 = 7541A783125070BA0014C836 /* PBXTextBookmark */;
 			7541A784125070BA0014C836 = 7541A784125070BA0014C836 /* PBXTextBookmark */;
@@ -184,6 +184,7 @@
 			7541A78D125070BA0014C836 = 7541A78D125070BA0014C836 /* PBXTextBookmark */;
 			7541A78E125070BA0014C836 = 7541A78E125070BA0014C836 /* PBXTextBookmark */;
 			7541A78F125070BA0014C836 = 7541A78F125070BA0014C836 /* PBXTextBookmark */;
+			75B02E0813811B6A00A71327 /* PBXTextBookmark */ = 75B02E0813811B6A00A71327 /* PBXTextBookmark */;
 			75E3A7701254D670001A183A = 75E3A7701254D670001A183A /* PBXTextBookmark */;
 			75E9AD321250932E003CD87A = 75E9AD321250932E003CD87A /* PBXTextBookmark */;
 			75E9AE0812509533003CD87A = 75E9AE0812509533003CD87A /* PBXTextBookmark */;
@@ -592,9 +593,6 @@
 			};
 		};
 		customDataFormattersEnabled = 1;
-		dataTipCustomDataFormattersEnabled = 1;
-		dataTipShowTypeColumn = 1;
-		dataTipSortType = 0;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
 		dylibVariantSuffix = "";
@@ -608,7 +606,6 @@
 		name = "FITS Liberator";
 		savedGlobals = {
 		};
-		showTypeColumn = 1;
 		sourceDirectories = (
 		);
 		variableFormatDictionary = {
@@ -974,9 +971,9 @@
 	};
 	7534A5010CA9529400FD9782 /* Environment.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1447, 10777}}";
+			sepNavIntBoundsRect = "{{0, 0}, {968, 13120}}";
 			sepNavSelRange = "{4004, 0}";
-			sepNavVisRange = "{2549, 1453}";
+			sepNavVisRange = "{3105, 897}";
 			sepNavWindowFrame = "{{84, 205}, {1359, 905}}";
 		};
 	};
@@ -1468,6 +1465,16 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
+	75B02E0813811B6A00A71327 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 7534A5010CA9529400FD9782 /* Environment.cpp */;
+		name = "Environment.cpp: 109";
+		rLen = 0;
+		rLoc = 4004;
+		rType = 0;
+		vrLen = 897;
+		vrLoc = 3105;
+	};
 	75D3231B1248E427000640E1 /* MacStretchView.cpp:278 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
@@ -1486,7 +1493,6 @@
 		lineNumber = 278;
 		location = "FITS Liberator";
 		modificationTime = 307447560.058119;
-		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
 	75D323281248E42F000640E1 /* XCBreakpointLogAction */ = {
@@ -1519,7 +1525,6 @@
 		lineNumber = 192;
 		location = "FITS Liberator";
 		modificationTime = 307447560.057311;
-		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
 	75D323331248E4CB000640E1 /* XCBreakpointLogAction */ = {
@@ -1549,7 +1554,6 @@
 		lineNumber = 924;
 		location = "FITS Liberator";
 		modificationTime = 307447560.058665;
-		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
 	75D324291248FC6B000640E1 /* MacPreviewView.cpp:891 */ = {
@@ -1567,7 +1571,6 @@
 		lineNumber = 891;
 		location = "FITS Liberator";
 		modificationTime = 307447560.059126;
-		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
 	75E3A7701254D670001A183A /* PBXTextBookmark */ = {
