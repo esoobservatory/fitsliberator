@@ -5,4 +5,4 @@
 #define FITSMINORVERSION "0"
 #define FITSMINORVERSION_NUM 3
 #define FITSCOPYRIGHTYEAR 2004-2011
-#define FITSBUNDLEIDENTIFIER "org.spacetelescope.fits_liberator"
+#define FITSBUNDLEIDENTIFIER "org.spacetelescope.fits_liberator.standalone"
