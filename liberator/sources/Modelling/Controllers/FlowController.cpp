@@ -1848,7 +1848,8 @@ void FlowController::End() {
 }
 
 Void FlowController::applyPreferences() {
-	prefs->load();
+	if ( prefs->load() )//make sure that we only set flip if the default values are not used.
+		planeModel.setFlipped( prefs->flipped );
 	
 	globalSettingsModel.setPreviewEnabled( prefs->getPreviewSetting() );
 	globalSettingsModel.setFreezeSettings( prefs->getFreezeSetting() );
@@ -1864,7 +1865,7 @@ Void FlowController::applyPreferences() {
     optionsModel.DefaultStretch(prefs->defaultStretch);
     optionsModel.HistogramMarkers(prefs->histMarkers);
 
-	planeModel.setFlipped( session.flip.flipped );
+	
 	optionsModel.ApplyStretchDirectly( prefs->applyStretchValues );
 }
 
