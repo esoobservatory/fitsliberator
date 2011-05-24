@@ -369,7 +369,7 @@ DictionaryNode* Preferences::storeMetaData() {
  *
  * @TODO Doesn't take malformed preference files into account.
  */
-Void Preferences::load() {
+Bool Preferences::load() {
 	if( settingsTree->loadFile() ) {
 		if( settingsTree->getSettingsTree()->getType() == SETTINGS_TREE_DICTIONARY ) {
 			DictionaryNode* node = (DictionaryNode *) settingsTree->getSettingsTree();
@@ -428,11 +428,14 @@ Void Preferences::load() {
 				}
 			}
 		} else {
+			return false;
 			// junk in file, use default values
 		}
 	} else {
+		return false;
 		// couldn't load file, use default values.	
 	}
+	return true;
 }
 
 /**

@@ -128,7 +128,7 @@ namespace FitsLiberator {
 			~Preferences();
 			
 			Void store();
-			Void load();
+			Bool load();
 		
 			Void setGlobalSettings( Bool, Bool, Bool, Bool, Bool, FitsLiberator::Modelling::ImageInformationSettings );
 			Void addLoadedFile( String&, FitsLiberator::FitsSession& );

@@ -67,7 +67,7 @@ PlaneModel::PlaneModel( ChangeManager* chman, ImageReader* r )
   planeIndex( -1 ),
   undefinedOption( kFITSDefaultUndefined ) {
   	updateModel( 0, 0 );
-  	setImportBitDepth( kFITSDefaultBitDepth );
+  	//setImportBitDepth( kFITSDefaultBitDepth );
 	
 }
 
@@ -279,9 +279,9 @@ Void PlaneModel::doUpdateModel()
 	this->width = cube->Width();
 	this->height = cube->Height();
 	
-	if( cube->Format() <= 8 ) {
+	if( ::abs(cube->Format()) <= 8 ) {
 		setImportBitDepth(channel8);
-	} else if( cube->Format() <= 16 ) {
+	} else if( ::abs(cube->Format()) <= 16 ) {
 		setImportBitDepth(channel16);
 	} else {
 		setImportBitDepth(channel32);
