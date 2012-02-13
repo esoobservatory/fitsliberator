@@ -187,7 +187,7 @@ Void FlowController::imageChanged_( Int imageIndex, Int planeIndex, Bool newFile
 
 	previewController.fitToPreview( size, planeModel.getFlipped().flipped );
 	Bool doPreview = false;
-	if ( ! ( defStr != getStretch() ) ) 
+	if ( ! ( defStr != getStretch() ) || newFile ) 
 	{
 		doPreview = true;
 		progressModel.SetMax( 100 );
@@ -1781,6 +1781,7 @@ Void FlowController::saveFile_( String fileName, Bool invokeEditor )
 		Environment::startSystemEditor(fileName);
 	}
 }
+
 
 Void FlowController::makeSession( FitsSession* session )
 {

@@ -60,6 +60,15 @@ using namespace FitsLiberator::Modelling;
 StretchModel::StretchModel( ChangeManager * chman ) : Model( chman )
 {
 	//inits somewhat arbitrary initial values..
+	this->setDefaultValues();
+
+}
+StretchModel::~StretchModel()
+{
+}
+
+Void StretchModel::setDefaultValues()
+{
 	this->default_background		=	0.0;
 	this->default_scale				=	1.0;
 	this->default_peakLevel			=	1.0;
@@ -75,12 +84,7 @@ StretchModel::StretchModel( ChangeManager * chman ) : Model( chman )
 	this->rescaleFactor				=	this->default_rescaleFactor;
 	this->peakLevel					=	this->default_peakLevel;
 	this->scaleBackground			=	this->default_scaleBackground;
-
 }
-StretchModel::~StretchModel()
-{
-}
-
 
 //==============================================================|
 //	Methods for interaction with the stretch function			|

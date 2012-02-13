@@ -211,8 +211,12 @@ ModelFramework::updateModels() {
         applySession(*session);
     } else {
         // Apply the default settings
-        histogramModel->setSliders( histogramModel->getBlackLevel(), histogramModel->getWhiteLevel() );
+        //histogramModel->setSliders( histogramModel->getBlackLevel(), histogramModel->getWhiteLevel() );
         stretchModel->setFunction((StretchFunction)prefs.defaultStretch);
+		stretchModel->setDefaultValues();
+		//session->stretch = Stretch();
+		//applySession( *session );
+		
     }
 
     //

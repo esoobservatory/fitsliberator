@@ -284,7 +284,7 @@ DictionaryNode* Preferences::storeGlobalSettings() {
     globalNode->addKey("DefaultBlackLevelPercentage", new RealNode( defaultBlackLevelPercentage ) );
     globalNode->addKey("DefaultWhiteLevelPercentage", new RealNode( defaultWhiteLevelPercentage ) );
     globalNode->addKey("DefaultScaledPeak", new RealNode( defaultScaledPeak ) );
-	globalNode->addKey("Flip", new BooleanNode( flipped ) );
+	//globalNode->addKey("Flip", new BooleanNode( flipped ) );
 	globalNode->addKey("ApplyStretchValues", new BooleanNode( applyStretchValues ) );
 
     return globalNode;
@@ -721,8 +721,8 @@ Void Preferences::loadGlobalSettings( DictionaryNode& node ) {
             loadRealNode( childNode, &defaultWhiteLevelPercentage );
         } else if ( key == "DefaultScaledPeak" ) {
             loadRealNode( childNode, &defaultScaledPeak );
-		} else if ( key == "Flip" ) {
-			loadBooleanNode( childNode, &flipped );
+		//} else if ( key == "Flip" ) {
+		//	loadBooleanNode( childNode, &flipped );
 		} else if ( key == "ApplyStretchValues" ) {
 			loadBooleanNode( childNode, &applyStretchValues );
 		}

@@ -67,6 +67,8 @@ namespace FitsLiberator
 			StretchModel( ChangeManager * chman );
 			~StretchModel();
 			
+			Void setDefaultValues();
+
 			//interaction  with the stretch function
 			FitsLiberator::Engine::StretchFunction	getFunction() const;
 			Void								    setFunction(FitsLiberator::Engine::StretchFunction);
