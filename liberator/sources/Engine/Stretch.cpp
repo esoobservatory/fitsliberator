@@ -101,6 +101,8 @@ Stretch::Stretch() {
     blackLevel		= 0;
     whiteLevel		= 0;
     outputMax		= 255;
+	peakLevel		= kFITSDefaultRescaleFactor;
+	//scalePeakLevel	= kFITSDefa
 }
 
 

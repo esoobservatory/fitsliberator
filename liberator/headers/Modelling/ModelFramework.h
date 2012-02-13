@@ -175,7 +175,7 @@ namespace FitsLiberator
             	Bool doGuess;				
 				Bool loadFile( String file );
 				Void initializeFramework();
-				
+				Void makeDefaultSession( FitsLiberator::FitsSession& session );
 
 				
 				FitsLiberator::FitsSession *			session;
