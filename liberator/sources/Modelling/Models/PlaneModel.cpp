@@ -102,52 +102,12 @@ Void PlaneModel::resetFlip()
 
 	if sign( CDELT1 ) == sign( CDELT2 ) then DO NOT FLIP
 */
-Bool PlaneModel::shouldFlip() const {
-
-
-	Double cd11 = 0.;
-	Double cd12 = 0.;
-	Double cd21 = 0.;
-	Double cd22 = 0.;
-
-	Double cdelt1 = 0.;
-	Double cdelt2 = 0.;
-
-	Bool flip = true;
-
-	const ImageCube* cube = (*reader)[plane.imageIndex];
+Bool PlaneModel::shouldFlip() const
+{
+	const ImageCube* cube = (*reader)[imageIndex];
 	assert(cube != 0);
 
-	if( cube->NumericProperty( "CD1_1", &cd11 ) &&
-		cube->NumericProperty( "CD1_2", &cd12 ) &&
-		cube->NumericProperty( "CD2_1", &cd21 ) &&
-		cube->NumericProperty( "CD2_2", &cd22 ) )
-	{
-		if ( FitsMath::signof( cd11 ) != FitsMath::signof( cd22 ) 
-		  && FitsMath::signof( cd12 ) == FitsMath::signof( cd21 ) )
-		{
-			flip = true;
-		}
-		else if ( FitsMath::signof( cd11 ) == FitsMath::signof( cd22 ) 
-			&&    FitsMath::signof( cd12 ) != FitsMath::signof( cd21 ) )
-		{
-			flip = false;
-		}
-	}
-	else if ( cube->NumericProperty( "CDELT1", &cdelt1 ) &&
-			  cube->NumericProperty( "CDELT2", &cdelt2 ) ) 		
-	{
-		if ( FitsMath::signof( cdelt1 ) != FitsMath::signof( cdelt2 ) )
-		{
-			flip = true;
-		}
-		else if ( FitsMath::signof( cdelt1 ) == FitsMath::signof( cdelt2 ) )
-		{
-			flip = false;
-		}
-	}
-
-	return flip;
+	return (cube->RowOrder() == ImageCube::BottomUp);
 }
 
 Void PlaneModel::updateFlip()

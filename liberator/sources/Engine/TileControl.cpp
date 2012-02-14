@@ -566,7 +566,10 @@ Int TileControl::doStatistics3( const ImageCube* cube, Bool stretched, Double* g
 	*globalMean = 0;
 	*globalMedian = 0;
 	*globalStdev = 0;
-	Int globalPixelCount = 0;	
+	//this should be a UInt and not Int since we can have
+	//images with more than 2^31 pixels and still less than 2^32
+	//Int globalPixelCount = 0;	
+	UInt globalPixelCount = 0;
 
 	UInt width = 0;
 	UInt height = 0;

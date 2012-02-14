@@ -94,7 +94,7 @@ inline bool valid(double value) {
 // Implementations of FitsStatisticsTools::getRange
 //-----------------------------------------------------------------------------
 
-Void FitsStatisticsTools::getRange( Double* pixels, Int nPixels, Int* pixelCnt,
+Void FitsStatisticsTools::getRange( Double* pixels, Int nPixels, UInt* pixelCnt,
 								    Double* min, Double* max, Double* mean_acc )
 {
 	
@@ -167,7 +167,7 @@ Void FitsStatisticsTools::getRange( Double* pixels, Int nPixels, Int* pixelCnt,
     };
 
     Void FitsStatisticsTools::getRange_par(
-        Double* pixels, Int nPixels, Int* pixelCnt,
+        Double* pixels, Int nPixels, UInt* pixelCnt,
         Double* min, Double* max, Double* mean_acc, Int /*nCpus*/ )
     {
 
@@ -184,13 +184,13 @@ Void FitsStatisticsTools::getRange( Double* pixels, Int nPixels, Int* pixelCnt,
 
 #else
     Void FitsStatisticsTools::getRange_par(
-        Double* pixels, Int nPixels, Int* pixelCnt,
+        Double* pixels, Int nPixels, UInt* pixelCnt,
         Double* min, Double* max, Double* mean_acc, Int nCpus )
     {
 	    Double min_int = *min;
 	    Double max_int = *max;
 	    Double mean_acc_int = 0;
-	    Int pixelCnt_int = 0;
+	    UInt pixelCnt_int = 0;
 
         #ifdef USE_OPENMP	
             #pragma omp parallel num_threads( nCpus ) firstprivate(min_int,max_int,mean_acc_int,pixelCnt_int)
