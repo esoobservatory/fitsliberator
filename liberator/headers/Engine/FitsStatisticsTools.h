@@ -75,7 +75,7 @@ namespace FitsLiberator
 	            @param max is a pointer to the Double-typed max value
 	            @param mean_acc is a pointer to the Double-typed mean_acc value
             */
-			static Void getRange( Double* pixels, Int nPixels, Int* pixelCnt,
+			static Void getRange( Double* pixels, Int nPixels, UInt* pixelCnt,
 								  Double* min, Double* max, Double* mean_acc );
 
             /** Method for accumulating range and mean.
@@ -86,7 +86,7 @@ namespace FitsLiberator
 	            @param max is a pointer to the Double-typed max value
 	            @param mean_acc is a pointer to the Double-typed mean_acc value
             */
-			static Void getRange_par( Double* pixels, Int nPixels, Int* pixelCnt,
+			static Void getRange_par( Double* pixels, Int nPixels, UInt* pixelCnt,
 								  Double* min, Double* max, Double* mean_acc, Int nCpus );
             /** Method for finding stdev, median and the histogram. Retrieves 
                 the histogram info on a single thread */
