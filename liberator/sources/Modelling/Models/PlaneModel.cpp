@@ -239,14 +239,34 @@ Void PlaneModel::doUpdateModel()
 	this->width = cube->Width();
 	this->height = cube->Height();
 	
-	if( ::abs(cube->Format()) <= 8 ) {
+	ImageCube::PixelFormat format = cube->Format();
+
+	if ( format == ImageCube::Unsigned8 || format == ImageCube::Signed8 )
+		setImportBitDepth( channel8 );
+	else if ( format == ImageCube::Signed16 || format == ImageCube::Unsigned16 )
+		setImportBitDepth( channel16 );
+	else 
+		setImportBitDepth( channel32 );
+
+
+				/*Float64		= -64,
+				Float32		= -32,
+				Unsigned8	= 8,
+				Signed8		= 10,
+				Signed16	= 16,
+				Unsigned16	= 20,
+				Signed32	= 32,
+				Unsigned32	= 40,
+				Signed64	= 64*/
+
+/*	if( ::abs(cube->Format()) <= 8 ) {
 		setImportBitDepth(channel8);
 	} else if( ::abs(cube->Format()) <= 16 ) {
 		setImportBitDepth(channel16);
 	} else {
 		setImportBitDepth(channel32);
 	}
-
+*/
 	updateFlip();
 
 	Notify();

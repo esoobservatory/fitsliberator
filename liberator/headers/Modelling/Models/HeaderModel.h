@@ -61,8 +61,8 @@ namespace FitsLiberator {
 	namespace Modelling {
 		class HeaderModel : public Model {
 			public:
-				HeaderModel( FitsLiberator::Engine::ImageReader*, ChangeManager * );
-				~HeaderModel();
+				HeaderModel( ChangeManager*, FitsLiberator::Engine::ImageReader* );
+				
 				
 				String getHeader();
 				Void updateReader( FitsLiberator::Engine::ImageReader* r );

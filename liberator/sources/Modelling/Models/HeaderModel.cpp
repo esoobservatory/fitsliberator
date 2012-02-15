@@ -60,19 +60,12 @@ using namespace FitsLiberator::Modelling;
 /**
  * Constructor
  */
-HeaderModel::HeaderModel( FitsLiberator::Engine::ImageReader* r, ChangeManager * chman ) 
-: reader( r ), Model( chman ) {
+HeaderModel::HeaderModel( ChangeManager* chman, ImageReader* r ) 
+: Model( chman ), reader( r ) {
 }
 
-/**
- * Destructor.
- */
-HeaderModel::~HeaderModel() 
-{
 
-}
-
-Void HeaderModel::updateReader( FitsLiberator::Engine::ImageReader* r )
+Void HeaderModel::updateReader( ImageReader* r )
 {
 	this->reader = r;
 	Notify();

@@ -176,6 +176,7 @@ namespace FitsLiberator
 				Bool loadFile( String file );
 				Void initializeFramework();
 				Void makeDefaultSession( FitsLiberator::FitsSession& session );
+				Void applyDefaultPrefs( const FitsLiberator::Preferences::Preferences& );
 
 				
 				FitsLiberator::FitsSession *			session;

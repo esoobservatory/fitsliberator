@@ -54,6 +54,7 @@
 #include "FitsLiberator.h"
 #include "Observer.h"
 #include "Stretch.h"
+#include "Preferences.h"
 
 namespace FitsLiberator
 {
@@ -68,6 +69,7 @@ namespace FitsLiberator
 			~StretchModel();
 			
 			Void setDefaultValues();
+			Void setDefaultPrefs( const FitsLiberator::Preferences::Preferences& prefs );
 
 			//interaction  with the stretch function
 			FitsLiberator::Engine::StretchFunction	getFunction() const;
