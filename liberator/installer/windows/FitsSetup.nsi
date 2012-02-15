@@ -22,7 +22,7 @@
 !define PRODUCT_WEB_SITE        "http://spacetelescope.org/projects/fits_liberator/"
 !define PRODUCT_UNINST_KEY      "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 
-!define SETUP_NAME   "..\..\binaries\FL_301_Win.exe"
+!define SETUP_NAME   "..\..\binaries\FL_30_Win.exe"
 !define SETUP_ROOT   "$PROGRAMFILES\FITS Liberator"
 !define SETUP_LOG    "Fits.log"
 !define SETUP_WIZ    "Uninstall FITS Liberator.exe"
