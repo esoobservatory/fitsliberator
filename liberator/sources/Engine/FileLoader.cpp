@@ -182,7 +182,7 @@ Void FileLoader::readTransparent( O maxValue, Short bitDepth,
 	//get the image cube
 	const ImageCube* cube = reader[session->plane.imageIndex];
 	
-	Double* pixelBuffer = NULL;
+	//Double* pixelBuffer = NULL;
 
 	
 	
@@ -268,14 +268,15 @@ Void FileLoader::readTransparent( O maxValue, Short bitDepth,
 		Int bufSize = bounds.getArea();
 		
 		//allocate the resulting pixel buffer
-		pixelBuffer = new Double[bufSize];
+		//pixelBuffer = new Double[bufSize];
 		
 		//copy pixels to the buffer		
-		for ( Int j = 0; j < bufSize; j++ )		
-			pixelBuffer[j] = tile->stretchedPixels[j];
+		//for ( Int j = 0; j < bufSize; j++ )		
+		//	pixelBuffer[j] = tile->stretchedPixels[j];
 				
 		//scale the pixels
-		FitsEngine::scale_par( session->stretch, pixelBuffer, bufSize, tileControl.getNumberOfThreads() );
+		//FitsEngine::scale_par( session->stretch, pixelBuffer, bufSize, tileControl.getNumberOfThreads() );
+		FitsEngine::scale_par( session->stretch, tile->stretchedPixels, bufSize, tileControl.getNumberOfThreads() );
 	
 		      
 
@@ -285,7 +286,7 @@ Void FileLoader::readTransparent( O maxValue, Short bitDepth,
 			for ( Int k = 0; k < rowsPerStrip; k++ )			
 			{	
 				UInt ind = 2*(bounds.getWidth()*k+j);
-				Double pixel = pixelBuffer[bounds.getWidth()*k+j];
+				Double pixel = tile->stretchedPixels[bounds.getWidth()*k+j]; //pixelBuffer[bounds.getWidth()*k+j];
 				
 				if(  pixel != FitsMath::NaN && FitsMath::isFinite( pixel ) )
 				{
@@ -327,7 +328,7 @@ Void FileLoader::readTransparent( O maxValue, Short bitDepth,
 				for ( Int k = rowsPerStrip; k < bounds.getHeight(); k++ )
 				{
 					UInt ind = 2*(bounds.getWidth()*(k-rowsPerStrip)+j);
-					Double pixel = pixelBuffer[bounds.getWidth()*k+j];
+					Double pixel = tile->stretchedPixels[bounds.getWidth()*k+j];//pixelBuffer[bounds.getWidth()*k+j];
 					if(  pixel != FitsMath::NaN && FitsMath::isFinite( pixel ) )
 					{
 						if( pixel > maxValue )
@@ -355,8 +356,8 @@ Void FileLoader::readTransparent( O maxValue, Short bitDepth,
 
 
 		//clean up
-		delete[] pixelBuffer;
-		pixelBuffer = NULL;
+		//delete[] pixelBuffer;
+		//pixelBuffer = NULL;
 		
 	}	
 	delete[] rowBuffer;
@@ -397,7 +398,7 @@ Void FileLoader::readBlack( O maxValue, Short bitDepth,FitsLiberator::Modelling:
 	//get the image cube
 	const ImageCube* cube = reader[session->plane.imageIndex];
 	
-	Double* pixelBuffer = NULL;
+	//Double* pixelBuffer = NULL;
 	
 	//get the number of tiles	
 	Int nTiles = tileControl.getNumberOfTiles();
@@ -479,7 +480,7 @@ Void FileLoader::readBlack( O maxValue, Short bitDepth,FitsLiberator::Modelling:
 		Int bufSize = bounds.getArea();
 		
 		//allocate the resulting pixel buffer
-		pixelBuffer = new Double[bufSize];
+		/*pixelBuffer = new Double[bufSize];
 		
 		//copy pixels to the buffer		
 		for ( Int j = 0; j < bufSize; j++ )		
@@ -487,6 +488,8 @@ Void FileLoader::readBlack( O maxValue, Short bitDepth,FitsLiberator::Modelling:
 				
 		//scale the pixels
 		FitsEngine::scale_par( session->stretch, pixelBuffer, bufSize, tileControl.getNumberOfThreads() );
+		*/
+		FitsEngine::scale_par( session->stretch, tile->stretchedPixels, bufSize, tileControl.getNumberOfThreads() );
 	
 		      
 
@@ -495,7 +498,8 @@ Void FileLoader::readBlack( O maxValue, Short bitDepth,FitsLiberator::Modelling:
 		{
 			for ( Int k = 0; k < rowsPerStrip; k++ )			
 			{				
-				Double pixel = pixelBuffer[bounds.getWidth()*k+j];
+				Double pixel = tile->stretchedPixels[bounds.getWidth()*k+j];
+				//Double pixel = pixelBuffer[bounds.getWidth()*k+j];
 				if(  pixel != FitsMath::NaN && FitsMath::isFinite( pixel ) )
 				{
 					if( pixel > maxValue )
@@ -521,37 +525,41 @@ Void FileLoader::readBlack( O maxValue, Short bitDepth,FitsLiberator::Modelling:
 			delete[] rowBuffer;
 
 			Int pixelsRemaining = bounds.getWidth()*(bounds.getHeight()-rowsPerStrip);
-			rowBuffer = new O[pixelsRemaining];
-			//loop through the line
-			for ( Int j = 0; j < bounds.getWidth(); j++ )
-			{	
-				//loop through the remaining of the last tile
-				for ( Int k = rowsPerStrip; k < bounds.getHeight(); k++ )
-				{
-					Double pixel = pixelBuffer[bounds.getWidth()*k+j];
-					if(  pixel != FitsMath::NaN && FitsMath::isFinite( pixel ) )
+			if ( pixelsRemaining > 0 )
+			{
+				rowBuffer = new O[pixelsRemaining];
+				//loop through the line
+				for ( Int j = 0; j < bounds.getWidth(); j++ )
+				{	
+					//loop through the remaining of the last tile
+					for ( Int k = rowsPerStrip; k < bounds.getHeight(); k++ )
 					{
-						if( pixel > maxValue )
-							pixel = maxValue;
-						if( pixel < 0 )
-							pixel = 0;
+						Double pixel = tile->stretchedPixels[bounds.getWidth()*k+j];
+						//Double pixel = pixelBuffer[bounds.getWidth()*k+j];
+						if(  pixel != FitsMath::NaN && FitsMath::isFinite( pixel ) )
+						{
+							if( pixel > maxValue )
+								pixel = maxValue;
+							if( pixel < 0 )
+								pixel = 0;
+						}
+						else		
+							pixel = 0;		        
+						
+						rowBuffer[bounds.getWidth()*(k-rowsPerStrip)+j] = (O)pixel;
 					}
-					else		
-						pixel = 0;		        
-					
-					rowBuffer[bounds.getWidth()*(k-rowsPerStrip)+j] = (O)pixel;
 				}
+				//write to the file
+				if ( TIFFWriteEncodedStrip( outImage, stripsPerImage-1, rowBuffer,sizeof(O)*pixelsRemaining) == -1 )
+					throw FileLoaderException("Could not write encoded strip");
 			}
-			//write to the file
-			if ( TIFFWriteEncodedStrip( outImage, stripsPerImage-1, rowBuffer,sizeof(O)*pixelsRemaining) == -1 )
-				throw FileLoaderException("Could not write encoded strip");
 			progModel.Increment();
 		}
 
 
 		//clean up
-		delete[] pixelBuffer;
-		pixelBuffer = NULL;
+//		delete[] pixelBuffer;
+//		pixelBuffer = NULL;
 		
 	}	
 	delete[] rowBuffer;
