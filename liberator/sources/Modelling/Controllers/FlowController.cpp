@@ -423,7 +423,7 @@ Void FlowController::initialGuess()
 	FitsStatisticsTools::initialGuess( (InitialGuess)(optionsModel.GuessMethod()),
 		optionsModel.BlackLevelPercentage(), 
 		optionsModel.WhiteLevelPercentage(), &bl, &wl, min, max, mean, stdev, median, bins); 
-	stretchModel.setRescaleFactor( wl );
+	stretchModel.setRescaleFactor( optionsModel.ScaledPeak() );
 	stretchModel.setPeakLevel( wl );
 	stretchModel.setScale ( 1.0 );
 
@@ -811,6 +811,8 @@ Void FlowController::defaultValues_()
 	tileControl.reTile( cube, TileControl::tileSizeLarge, planeModel.getPlane() );
 	stretchController.defaultValues();
 	stretchModel.setFunction( (StretchFunction)( optionsModel.DefaultStretch() ) );
+	stretchModel.setRescaleFactor( optionsModel.ScaledPeak() );
+
 	
 	progressModel.SetMax( 100 );	
 	

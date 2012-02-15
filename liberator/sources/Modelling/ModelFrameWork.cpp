@@ -108,8 +108,6 @@ Void ModelFramework::initializeFramework()
 {
  //
     // First we create the models
-
-	headerModel			= new HeaderModel( reader, changeManager );
 	planeModel          = new PlaneModel( changeManager, reader );
 	globalSettingsModel = new GlobalSettingsModel( changeManager );
 	previewModel		= new PreviewModel( changeManager, *globalSettingsModel );
@@ -123,7 +121,7 @@ Void ModelFramework::initializeFramework()
 	optionsModel        = new OptionsModel( changeManager );
 	progressModel       = new ProgressModel( changeManager );
 	mainModel			= new MainModel( reader, changeManager );
-
+	headerModel			= new HeaderModel( changeManager, reader );
     
     
 
@@ -211,12 +209,9 @@ ModelFramework::updateModels() {
         applySession(*session);
     } else {
         // Apply the default settings
-        //histogramModel->setSliders( histogramModel->getBlackLevel(), histogramModel->getWhiteLevel() );
-		stretchModel->setFunction((StretchFunction)prefs.defaultStretch);
-		stretchModel->setDefaultValues();
-		planeModel->setFlipped( session->flip.flipped );
+        //histogramModel->setSliders( histogramModel->getBlackLevel(), histogramModel->getWhiteLevel() );		
 		//applySession( *session );
-		
+		applyDefaultPrefs( prefs );
     }
 
     //
@@ -249,6 +244,14 @@ ModelFramework::applySession(const FitsSession& session) {
 	globalSettingsModel->setSessionLoaded( true );
 }
 
+Void ModelFramework::applyDefaultPrefs( const FitsLiberator::Preferences::Preferences& prefs )
+{
+	stretchModel->setDefaultPrefs( prefs );
+	
+	planeModel->setFlipped( session->flip.flipped );
+	
+	histogramModel->setSliders( histogramModel->getBlackLevel(), histogramModel->getWhiteLevel() );
+}
 
 /**
 * When the user hits the "Save file" button
@@ -396,10 +399,10 @@ ModelFramework::~ModelFramework()
 		delete toolModel;
 	if ( stretchModel != NULL )
 		delete stretchModel;
-	if ( headerModel != NULL )
-		delete headerModel;
 	if ( repositoryModel != NULL )
 		delete repositoryModel;
+	if ( headerModel != NULL )
+		delete headerModel;	
 	if ( taxonomyEditorModel != NULL )
 		delete taxonomyEditorModel;
 	if ( optionsModel != NULL )

@@ -67,6 +67,14 @@ StretchModel::~StretchModel()
 {
 }
 
+Void StretchModel::setDefaultPrefs( const FitsLiberator::Preferences::Preferences& prefs )
+{
+	setDefaultValues();
+	
+	setFunction( (FitsLiberator::Engine::StretchFunction)(prefs.defaultStretch) );
+	setRescaleFactor( prefs.defaultScaledPeak );
+}
+
 Void StretchModel::setDefaultValues()
 {
 	this->default_background		=	0.0;
