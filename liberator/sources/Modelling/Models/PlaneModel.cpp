@@ -241,12 +241,17 @@ Void PlaneModel::doUpdateModel()
 	
 	ImageCube::PixelFormat format = cube->Format();
 
+/**
+Developer note: it seems that users (i.e. Robert) prefer a default to 16 bit in all cases
+unless when opening an 8 bit image. This has therefore been updated here.
+*/
+
 	if ( format == ImageCube::Unsigned8 || format == ImageCube::Signed8 )
 		setImportBitDepth( channel8 );
-	else if ( format == ImageCube::Signed16 || format == ImageCube::Unsigned16 )
+	else //if ( format == ImageCube::Signed16 || format == ImageCube::Unsigned16 )
 		setImportBitDepth( channel16 );
-	else 
-		setImportBitDepth( channel32 );
+	//else 
+	//	setImportBitDepth( channel32 );
 
 
 				/*Float64		= -64,
