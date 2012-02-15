@@ -1449,19 +1449,19 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\resources\windows\UseBlackLevel.png"
-					>
-				</File>
-				<File
 					RelativePath="..\..\resources\UseBlackLevel.png"
 					>
 				</File>
 				<File
-					RelativePath="..\..\resources\windows\UseWhiteLevel.png"
+					RelativePath="..\..\resources\windows\UseBlackLevel.png"
 					>
 				</File>
 				<File
 					RelativePath="..\..\resources\UseWhiteLevel.png"
+					>
+				</File>
+				<File
+					RelativePath="..\..\resources\windows\UseWhiteLevel.png"
 					>
 				</File>
 			</Filter>
